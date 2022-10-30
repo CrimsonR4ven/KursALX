@@ -51,7 +51,10 @@ namespace Cyberpunk_RPG_game
         {
             HP = HP - x;
         }
-
+        public void HPGain(int x)
+        {
+            HP = HP + x;
+        }
         public void TestNewWeapon()
         {
             Weapon2 = new Weapon("Katana", "Arasaka", "Legendary", 10, 100, 150);
