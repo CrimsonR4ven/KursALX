@@ -40,6 +40,11 @@ namespace Cyberpunk_RPG_game
             Console.WriteLine($"Weapon 3 (melee): {Melee.Model}, {Melee.Damage} Dmg");
         }
 
+        public void AddRepPoints()
+        {
+
+        }
+
         public void NewLevel()
         {
               //sekwencja nowego poziomu, +punkty reputacji? na pewno + punkt umiejętności/skilla
