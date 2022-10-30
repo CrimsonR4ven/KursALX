@@ -8,5 +8,6 @@ namespace Cyberpunk_RPG_game.Locations
 {
     public class CorpoPlaza
     {
+
     }
 }
