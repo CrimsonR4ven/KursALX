@@ -1,10 +1,10 @@
-﻿using KursALX.Lessons.Classes;
+﻿using KursALX.Lessons.L1.Classes;
 
-namespace KursALX.Lessons
+namespace KursALX.Lessons.L1
 {
     public class L1Constructors
     {
-        public static void Test()
+        public static void Run()
         {
             var spider = new Spider();
             var crimsonSpider = new Spider("Crimson", "Cool One", "Male", true);

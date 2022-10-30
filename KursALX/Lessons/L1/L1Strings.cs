@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KursALX.Lessons
+namespace KursALX.Lessons.L1
 {
     public class L1Strings
     {
-        public static void TestString()
+        public static void RunString()
         {
             string name = "Mateusz";
             Console.WriteLine(name);

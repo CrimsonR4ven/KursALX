@@ -1,10 +1,10 @@
-﻿using KursALX.Lessons.Classes;
+﻿using KursALX.Lessons.L1.Classes;
 
-namespace KursALX.Lessons
+namespace KursALX.Lessons.L1
 {
     public class L1ObjectVariables
     {
-        public static void Test1()
+        public static void Run1()
         {
             Dog dog = new Dog();
             dog.name = "Jackie";
@@ -19,7 +19,7 @@ namespace KursALX.Lessons
             Console.WriteLine(dog.Breed(5, 4).NumberOfMalePups);
             Console.WriteLine(dog.Breed(5, 4).NumberOfFemalePups);
         }
-        public static void Test2()
+        public static void Run2()
         {
             Dog doge = new Dog();
             doge.name = "Doge";

@@ -1,5 +1,6 @@
 ﻿using KursALX.Assignments;
-using KursALX.Lessons;
+using KursALX.Lessons.L1;
+using KursALX.Lessons.L2;
 
 //Console.Write("Kacper Kisielinski\n");
 //Console.WriteLine("ALX Course");
@@ -8,12 +9,15 @@ using KursALX.Lessons;
 // Classname Objectname = new Constructor(--);
 // Public CoZwraca Nazwa(argumenty){ Kod }
 
-//L1ObjectVariables.Test1();
-//L1ObjectVariables.Test2();
+//L1ObjectVariables.Run1();
+//L1ObjectVariables.Run2();
 //L1ObjectVariables l1Variables = new L1ObjectVariables();
 //l1Variables.WriteHehe();
-//L1SimpleVariables.Test();
-//L1Strings.TestString();
+//L1SimpleVariables.Run();
+//L1Strings.RunString();
 //L1Strings.ConcatenationTest();
-//L1Constructors.Test();
-AssignmentsDemo.Run();
+//L1Constructors.Run();
+
+//AssignmentsDemo.Run();
+//L2Conditionals.Run();
+L2EnumsAndSwitch.Run();
