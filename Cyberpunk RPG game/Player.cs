@@ -11,11 +11,12 @@ namespace Cyberpunk_RPG_game
     {
         // used for likeliness of special encounters
         int Luck;
-        int HP, MaxHP, Money, StreetRepPoints, StreetRepLvl, NextRepOn;
-        int Hacking, Mechanics, WeaponKnowleage, Strength, Reflex;
+        public int HP, MaxHP, Money, StreetRepPoints, StreetRepLvl, NextRepOn;
+        int Netrunning, Mechanics, Charisma, Strength, Reflex;
         string Name;
         WeaponMelee Melee;
         Weapon Weapon1, Weapon2;
+        Cybernetic BodyCyber, OpticsCyber, SkinCyber, ArmsCyber;
 
         public Player(string name)
         {
@@ -42,7 +43,7 @@ namespace Cyberpunk_RPG_game
 
         public void AddRepPoints()
         {
-
+            //self explainatory
         }
 
         public void NewLevel()
@@ -59,15 +60,39 @@ namespace Cyberpunk_RPG_game
             return false;
         }
 
-        public void HPLoss(int x)
+        public void HPLoss(int loss)
         {
-            HP = HP - x;
+            HP = HP - loss;
         }
-        public void HPGain(int x)
+        public void HPGain(int gain)
         {
-            HP = HP + x;
+            HP = HP + gain;
         }
-        
+        public void EquipBuyedCyber(Cybernetic cyber)
+        {
+            Netrunning = Netrunning + cyber.StatBoostNet;
+            Strength = Strength + cyber.StatBoostStr;
+            Charisma = Charisma + cyber.StatBoostChr;
+            Reflex = Reflex + cyber.StatBoostRef;
+
+            if (cyber.CyberType == EnumCybernetics.FULLBODY)
+            {
+                BodyCyber = cyber;
+            }
+            else if (cyber.CyberType == EnumCybernetics.SKIN)
+            {
+                SkinCyber = cyber;
+            }
+            else if (cyber.CyberType == EnumCybernetics.OPTICS)
+            {
+                OpticsCyber = cyber;
+            }
+            else if (cyber.CyberType == EnumCybernetics.MELEEWEP)
+            {
+                ArmsCyber = cyber;
+            }
+        }
+
         public void TestNewWeapon()
         {
             Weapon2 = new Weapon("Katana", "Arasaka", "Legendary", 10, 100, 150);
