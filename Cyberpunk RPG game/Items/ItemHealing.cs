@@ -10,7 +10,7 @@ namespace Cyberpunk_RPG_game.Items
         public void UseItem(Player player)
         {
             player.HPGain(HealingEffect);
-            NumberOfItems--;
+            NumberOfItems--; 
         }
     }
 }

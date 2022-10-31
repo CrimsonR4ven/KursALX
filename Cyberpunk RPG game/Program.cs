@@ -7,4 +7,4 @@ player.TestNewWeapon();
 player.ShowMenuStats();
 Console.Clear();
 player.StreetRepLvl = 3;
-CorpoPlaza.Location(player);
+CorpoPlaza.Location(player); 

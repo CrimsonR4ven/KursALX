@@ -10,7 +10,7 @@
             Make = "None";
             Rarity = "None";
             Model = "Hands";
-            Damage = 5;
+            Damage = 5; 
         }
         public WeaponMelee(string model, string make, string rarity, int damage, int sellPrice, int buyPrice)
         {

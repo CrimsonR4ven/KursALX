@@ -9,7 +9,7 @@ namespace Cyberpunk_RPG_game.Items
     public enum EnumCybernetics
     {
         FULLBODY,
-        OPTICS,
+        OPTICS, 
         MELEEWEP,
         SKIN
     }

@@ -10,7 +10,7 @@ namespace Cyberpunk_RPG_game.Locations
     public class PubDesert
     {
         public static string PubWelcome()
-        {
+        { 
             Console.WriteLine("-Small pub Next to the highway in the middle of nowhere-");
             //some dialogues
             Console.WriteLine("");

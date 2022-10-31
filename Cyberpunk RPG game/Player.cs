@@ -14,7 +14,7 @@ namespace Cyberpunk_RPG_game
         public int HP, MaxHP, Money, StreetRepPoints, StreetRepLvl, NextRepOn;
         int Netrunning, Mechanics, Charisma, Strength, Reflex;
         string Name;
-        WeaponMelee Melee;
+        WeaponMelee Melee; 
         Weapon Weapon1, Weapon2;
         Cybernetic BodyCyber, OpticsCyber, SkinCyber, ArmsCyber;
 

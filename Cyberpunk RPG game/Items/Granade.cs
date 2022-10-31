@@ -9,7 +9,7 @@
         {
             //enemy.DealDmg(Dmg)
             player.HPGain(1);
-            NumberOfItems--;
+            NumberOfItems--; 
         }
     }
 }

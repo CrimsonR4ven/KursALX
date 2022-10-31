@@ -14,7 +14,7 @@ namespace Cyberpunk_RPG_game.Npcs
         Cybernetic Cyber, Cyber2, Cyber3;
 
         public void RipperShop()
-        {
+        { 
             Console.WriteLine(WelcomeText);
             Console.WriteLine("");
             Console.WriteLine(WelcomeText);

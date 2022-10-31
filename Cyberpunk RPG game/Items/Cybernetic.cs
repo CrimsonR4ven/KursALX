@@ -12,7 +12,7 @@
             FullName = fullName;
             Cost = cost;
             StatBoostStr = statBoostStr;
-            StatBoostRef = statBoostRef;
+            StatBoostRef = statBoostRef; 
             StatBoostNet = statBoostNet;
             StatBoostChr = statBoostChr;
             CyberPsycho = cyberPsycho;

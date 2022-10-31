@@ -8,7 +8,7 @@ namespace Cyberpunk_RPG_game.Locations
 {
     public class CorpoPlaza
     {
-        public static void Location(Player player)
+        public static void Location(Player player) 
         {
             Console.WriteLine("--------------Corpo Plaza--------------");
             Console.WriteLine(""); // opis lokacji

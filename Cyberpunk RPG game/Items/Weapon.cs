@@ -11,7 +11,7 @@ namespace Cyberpunk_RPG_game.Items
         public string Model, Make, Rarity;
         public int Damage, SellPrice, BuyPrice;
 
-        public Weapon()
+        public Weapon() 
         {
             Make = "None";
             Rarity = "None";

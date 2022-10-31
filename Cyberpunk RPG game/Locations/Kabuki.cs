@@ -10,3 +10,4 @@ namespace Cyberpunk_RPG_game.Locations
     {
     }
 }
+ 
