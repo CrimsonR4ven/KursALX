@@ -1,6 +1,4 @@
-﻿using Cyberpunk_RPG_game.Npcs;
-
-namespace Cyberpunk_RPG_game.Items
+﻿namespace Cyberpunk_RPG_game.Items
 {
     public class CyberneticsList
     {
