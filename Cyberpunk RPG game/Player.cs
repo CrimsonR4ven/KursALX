@@ -14,6 +14,7 @@ namespace Cyberpunk_RPG_game
         public WeaponMelee Melee; 
         public Weapon Weapon1, Weapon2;
         public Cybernetic BodyCyber, OpticsCyber, SkinCyber, ArmsCyber;
+        public AmmoType SniperAmmo, ShotgunAmmo, SmallAmmo, RocketAmmo;
 
         public Player(string name)
         {
@@ -100,7 +101,7 @@ namespace Cyberpunk_RPG_game
 
         public void TestNewWeapon()
         {
-            Weapon2 = new Weapon("Katana", "Arasaka", "Legendary", 10, 100, 150);
+            Weapon2 = new Weapon("Katana", "Arasaka", "Legendary", 10, 100, 150, EnumAmmoType.SMALL);
         }
     }
 }

@@ -4,9 +4,19 @@ namespace Cyberpunk_RPG_game.Npcs
 {
     public class Enemy
     {
-        public string name;
-        int HP;
-        Weapon weapon;
-        WeaponMelee e;
+        public string Name;
+        int HP, Heal;
+        Weapon EquippedWeapon;
+        WeaponMelee Melee;
+
+        public void HPLoss(int loss)
+        {
+            HP = HP - loss;
+        }
+        public void HPGain()
+        {
+            HP = HP + Heal;
+        }
+
     }
 }
