@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cyberpunk_RPG_game.Locations
+﻿namespace Cyberpunk_RPG_game.Locations
 {
     public class CorpoPlaza
     {
@@ -23,6 +17,5 @@ namespace Cyberpunk_RPG_game.Locations
                 Console.WriteLine("3. Coś2");
             }
         }
-
     }
 }
