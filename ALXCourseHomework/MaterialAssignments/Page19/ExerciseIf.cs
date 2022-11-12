@@ -8,19 +8,19 @@
             double Price = double.Parse(Console.ReadLine());
             Console.Write("Original price:  ");
 
-            if (Price > 100)
+            if (Price >= 100)
             {
                 FinalPrice = Price - (Price * 0.15);
                 Console.WriteLine("You received discount: 15%");
                 Console.WriteLine($"Final price:  {FinalPrice}");
             }
-            else if ((Price <= 100) & (Price > 60))
+            else if ((Price < 100) & (Price >= 60))
             {
                 FinalPrice = Price - (Price * 0.05);
                 Console.WriteLine("You received discount: 5%");
                 Console.WriteLine($"Final price:  {FinalPrice}");
             }
-            else if ((Price <= 60) & (Price >= 0))
+            else if ((Price < 60) & (Price >= 0))
             {
                 FinalPrice = Price;
                 Console.WriteLine("There is no discount for you");
@@ -43,17 +43,17 @@
                 case < 0:
                     Console.WriteLine("Wait, You want us to give you money?!");
                     break;
-                case <= 60:
+                case < 60:
                     FinalPrice = Price;
                     Console.WriteLine("There is no discount for you");
                     Console.WriteLine($"Final price: {FinalPrice}");
                     break;
-                case <= 100:
+                case < 100:
                     FinalPrice = Price - (Price * 0.05);
                     Console.WriteLine("You received discount: 5%");
                     Console.WriteLine($"Final price: {FinalPrice}");
                     break;
-                case > 100:
+                case >= 100:
                     FinalPrice = Price - (Price * 0.15);
                     Console.WriteLine("You received discount: 15%");
                     Console.WriteLine($"Final price: {FinalPrice}");
