@@ -2,11 +2,11 @@
 {
     public class ExerciseIf
     {
-        public static void DiscountIf()
+        public static void Discount1()
         {
             double FinalPrice;
+            double Price = double.Parse(Console.ReadLine());
             Console.Write("Original price:  ");
-            var Price = double.Parse(Console.ReadLine());
 
             if (Price > 100)
             {
@@ -32,9 +32,10 @@
             }
         }
 
-        public static void DiscountSwitch()
+        public static void Discount2()
         {
             double FinalPrice;
+            double Price = double.Parse(Console.ReadLine());
             Console.Write("Original price:\t\t");
             var Price = Double.Parse(Console.ReadLine());
 
