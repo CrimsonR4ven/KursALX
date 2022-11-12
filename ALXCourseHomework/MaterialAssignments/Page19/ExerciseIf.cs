@@ -35,7 +35,7 @@
         public static void Discount2()
         {
             double FinalPrice;
-            Console.Write("Original price:\t\t");
+            Console.Write("Original price:");
             double Price = double.Parse(Console.ReadLine());
 
             switch (Price)
