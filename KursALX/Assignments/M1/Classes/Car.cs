@@ -1,4 +1,4 @@
-﻿namespace KursALX.Assignments.Classes
+﻿namespace KursALX.Assignments.M1.Classes
 {
     public class Car
     {

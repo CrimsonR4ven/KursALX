@@ -1,6 +1,6 @@
-﻿using KursALX.Assignments.Classes;
+﻿using KursALX.Assignments.M1.Classes;
 
-namespace KursALX.Assignments
+namespace KursALX.Assignments.M1
 {
     public class AssignmentsDemo
     {

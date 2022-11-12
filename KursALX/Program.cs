@@ -1,4 +1,5 @@
 ﻿using KursALX.Assignments;
+using KursALX.Assignments.M2;
 using KursALX.Lessons.L1;
 using KursALX.Lessons.L2;
 
@@ -20,4 +21,6 @@ using KursALX.Lessons.L2;
 
 //AssignmentsDemo.Run();
 //L2Conditionals.Run();
-L2EnumsAndSwitch.Run();
+//L2EnumsAndSwitch.Run();
+
+SeniorityServiceTest.Test();
