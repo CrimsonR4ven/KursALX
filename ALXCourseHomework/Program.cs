@@ -9,6 +9,6 @@ ExerciseVariables.PersonalData();
 ExerciseVariables.Day();
 ExerciseOperators.MathCool(12, 5, 100);
 ExerciseOperators.DeMorganLaw();
-ExerciseIf.DiscountIf();
-ExerciseIf.DiscountSwitch();
+ExerciseIf.Discount1();
+ExerciseIf.Discount2();
 HomeworkTest1.Run();
