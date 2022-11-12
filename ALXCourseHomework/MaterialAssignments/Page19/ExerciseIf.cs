@@ -37,7 +37,6 @@
             double FinalPrice;
             double Price = double.Parse(Console.ReadLine());
             Console.Write("Original price:\t\t");
-            var Price = Double.Parse(Console.ReadLine());
 
             switch (Price)
             {
