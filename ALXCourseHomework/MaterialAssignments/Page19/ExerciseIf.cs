@@ -5,8 +5,8 @@
         public static void Discount1()
         {
             double FinalPrice;
-            double Price = double.Parse(Console.ReadLine());
             Console.Write("Original price:  ");
+            double Price = double.Parse(Console.ReadLine());
 
             if (Price >= 100)
             {
@@ -35,8 +35,8 @@
         public static void Discount2()
         {
             double FinalPrice;
-            double Price = double.Parse(Console.ReadLine());
             Console.Write("Original price:\t\t");
+            double Price = double.Parse(Console.ReadLine());
 
             switch (Price)
             {
