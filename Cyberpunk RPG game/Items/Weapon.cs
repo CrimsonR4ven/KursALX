@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cyberpunk_RPG_game.Items
+﻿namespace Cyberpunk_RPG_game.Items
 {
     public class Weapon
     {
         public string Model, Make, Rarity;
         public int Damage, SellPrice, BuyPrice;
+        EnumAmmoType AmmoType;
 
         public Weapon() 
         {
@@ -18,7 +13,7 @@ namespace Cyberpunk_RPG_game.Items
             Model = "None";
             Damage = 0;
         }
-        public Weapon(string model, string make, string rarity, int damage, int sellPrice, int buyPrice)
+        public Weapon(string model, string make, string rarity, int damage, int sellPrice, int buyPrice, EnumAmmoType ammoType)
         {
             Make = make;
             Rarity = rarity;
@@ -26,6 +21,7 @@ namespace Cyberpunk_RPG_game.Items
             Damage = damage;
             SellPrice = sellPrice;
             BuyPrice = buyPrice;
+            AmmoType = ammoType;
         }
     }
 }

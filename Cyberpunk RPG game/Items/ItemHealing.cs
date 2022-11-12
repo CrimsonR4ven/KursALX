@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata;
-
-namespace Cyberpunk_RPG_game.Items
+﻿namespace Cyberpunk_RPG_game.Items
 {
     public class ItemHealing
     {

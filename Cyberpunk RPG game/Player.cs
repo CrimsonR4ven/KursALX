@@ -1,22 +1,20 @@
 ﻿using Cyberpunk_RPG_game.Items;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cyberpunk_RPG_game
 {
     public class Player
     {
         // used for likeliness of special encounters
-        int Luck;
-        public int HP, MaxHP, Money, StreetRepPoints, StreetRepLvl, NextRepOn;
-        int Netrunning, Mechanics, Charisma, Strength, Reflex;
-        string Name;
-        WeaponMelee Melee; 
-        Weapon Weapon1, Weapon2;
-        Cybernetic BodyCyber, OpticsCyber, SkinCyber, ArmsCyber;
+        public int Luck;
+        public int HP, MaxHP, Money, StreetRepPoints, StreetRepLvl, StreetRepNextLvl;
+        public int Netrunning, Mechanics, Charisma, Strength, Reflex;
+        public int SkillPointsUsed, SkillPointsAvailable;
+        public string Name;
+
+        public WeaponMelee Melee; 
+        public Weapon Weapon1, Weapon2;
+        public Cybernetic BodyCyber, OpticsCyber, SkinCyber, ArmsCyber;
+        public AmmoType SniperAmmo, ShotgunAmmo, SmallAmmo, RocketAmmo;
 
         public Player(string name)
         {
@@ -25,7 +23,9 @@ namespace Cyberpunk_RPG_game
             Money = 1000;
             StreetRepPoints = 0;
             StreetRepLvl = 1;
-            NextRepOn = 500;
+            StreetRepNextLvl = 500;
+            SkillPointsUsed = 0;
+            SkillPointsAvailable = 0;
             Name = name;
             Melee = new WeaponMelee();
             Weapon1 = new Weapon();
@@ -35,20 +35,26 @@ namespace Cyberpunk_RPG_game
         public void ShowMenuStats()
         { 
             Console.WriteLine($"---------------------------------------{Name}---------------------------------------");
-            Console.WriteLine($"| HP: {HP}/{MaxHP} | StreetRep: Lvl {StreetRepLvl} | Next level on: {StreetRepPoints}/{NextRepOn} | EuroDolars: {Money} |");
+            Console.WriteLine($"| HP: {HP}/{MaxHP} | StreetRep: Lvl {StreetRepLvl} | Next level on: {StreetRepPoints}/{StreetRepNextLvl} | EuroDolars: {Money} |");
             Console.WriteLine($"Weapon 1: {Weapon1.Model}\n");
             Console.WriteLine($"Weapon 2: {Weapon2.Model} {Weapon2.Make} {Weapon2.Rarity} {Weapon2.Damage} {Weapon2.SellPrice} {Weapon2.BuyPrice}\n");
             Console.WriteLine($"Weapon 3 (melee): {Melee.Model}, {Melee.Damage} Dmg");
         }
 
-        public void AddRepPoints()
+        public void AddRepPoints(int repPoints)
         {
-            //self explainatory
+            StreetRepPoints = StreetRepPoints + repPoints;
+            if(StreetRepPoints >= StreetRepNextLvl)
+            {
+                StreetRepLvl++;
+                SkillPointsAvailable++;
+                StreetRepNextLvl = StreetRepNextLvl + 500;
+            }
         }
 
-        public void NewLevel()
+        public void NewLevelPoints()
         {
-              //sekwencja nowego poziomu, +punkty reputacji? na pewno + punkt umiejętności/skilla
+              //przyznanie punktu umiejętności
         }
 
         public bool IsDead()
@@ -95,7 +101,7 @@ namespace Cyberpunk_RPG_game
 
         public void TestNewWeapon()
         {
-            Weapon2 = new Weapon("Katana", "Arasaka", "Legendary", 10, 100, 150);
+            Weapon2 = new Weapon("Katana", "Arasaka", "Legendary", 10, 100, 150, EnumAmmoType.SMALL);
         }
     }
 }
