@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace KursALX.Assignments.M2
+﻿namespace KursALX.Assignments.M2.L1
 {
     public class SeniorityServiceTest
     {
@@ -32,7 +30,7 @@ namespace KursALX.Assignments.M2
         {
             foreach (Employee employee in employees)
             {
-                    Console.WriteLine($"Name: {employee.Name} Salary: {employee.Salary} Experience: {employee.Experience}");
+                Console.WriteLine($"Name: {employee.Name} Salary: {employee.Salary} Experience: {employee.Experience}");
             }
         }
     }

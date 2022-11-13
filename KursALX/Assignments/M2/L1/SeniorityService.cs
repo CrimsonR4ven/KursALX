@@ -1,4 +1,4 @@
-﻿namespace KursALX.Assignments.M2
+﻿namespace KursALX.Assignments.M2.L1
 {
     public class SeniorityService
     {
@@ -9,7 +9,7 @@
         public SeniorityService()
         {
             JuniorEmployees = new List<Employee>();
-            MidEmployees    = new List<Employee>();
+            MidEmployees = new List<Employee>();
             SeniorEmployees = new List<Employee>();
         }
         public void ClassifySeniorityBySalary(Employee employee)
