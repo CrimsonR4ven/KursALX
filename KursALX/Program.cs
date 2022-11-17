@@ -4,6 +4,8 @@ using KursALX.Assignments.M2.L2;
 using KursALX.Lessons.M1.L1;
 using KursALX.Lessons.M1.L2;
 using KursALX.Lessons.M2.L1;
+using KursALX.Lessons.M2.L2;
+using KursALX.Lessons.M2.L2.Classes;
 
 //Console.Write("Kacper Kisielinski\n");
 //Console.WriteLine("ALX Course");
@@ -35,6 +37,8 @@ Console.WriteLine("---------------------------------------");
 //L1Loops.RunWhile();
 //L1Loops.RunDoWhile();
 
-BookStorageApp.Run();
-
+//BookStorageApp.Run();
+//L2GettersAndSetters.Run();
+//L2Encapsulation.Run();
+L2Inheritance.Run();
 Console.WriteLine("---------------------------------------");

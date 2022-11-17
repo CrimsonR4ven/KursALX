@@ -1,6 +1,4 @@
-﻿using KursALX.Assignments.M2.L1;
-
-namespace KursALX.Assignments.M2.L2
+﻿namespace KursALX.Assignments.M2.L2
 {
     public class StorageService
     {

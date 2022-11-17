@@ -1,6 +1,8 @@
-﻿namespace ALXKalkulator.CalculatorOb
+﻿using ALXKalkulator.interfaces;
+
+namespace ALXKalkulator.CalculatorOb
 {
-    public class Calculator
+    public class Calculator : ICalculator
     {
         List<char> ValidChars;
         char[] ValidOperatorArray = { '+', '-', '*', '/' };
