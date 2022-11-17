@@ -1,6 +1,9 @@
 ﻿using KursALX.Assignments;
-using KursALX.Lessons.L1;
-using KursALX.Lessons.L2;
+using KursALX.Assignments.M2;
+using KursALX.Assignments.M2.L2;
+using KursALX.Lessons.M1.L1;
+using KursALX.Lessons.M1.L2;
+using KursALX.Lessons.M2.L1;
 
 //Console.Write("Kacper Kisielinski\n");
 //Console.WriteLine("ALX Course");
@@ -8,6 +11,8 @@ using KursALX.Lessons.L2;
 
 // Classname Objectname = new Constructor(--);
 // Public CoZwraca Nazwa(argumenty){ Kod }
+
+Console.WriteLine("---------------------------------------");
 
 //L1ObjectVariables.Run1();
 //L1ObjectVariables.Run2();
@@ -20,4 +25,16 @@ using KursALX.Lessons.L2;
 
 //AssignmentsDemo.Run();
 //L2Conditionals.Run();
-L2EnumsAndSwitch.Run();
+//L2EnumsAndSwitch.Run();
+
+//SeniorityServiceTest.Test();
+//L1Arrays.Run();
+//L1Lists.Run();
+//L1Loops.RunForeach();
+//L1Loops.RunFor();
+//L1Loops.RunWhile();
+//L1Loops.RunDoWhile();
+
+BookStorageApp.Run();
+
+Console.WriteLine("---------------------------------------");

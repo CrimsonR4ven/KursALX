@@ -2,48 +2,93 @@
 {
     public class Calculator
     {
-        double liczba1;
-        double liczba2;
-        public void Calculate()
+        List<char> ValidChars;
+        char[] ValidOperatorArray = { '+', '-', '*', '/' };
+
+        public Calculator()
         {
-            Console.Write("Podaj liczbę nr 1: ");
-            liczba1 = double.Parse(Console.ReadLine());
-            Console.Write("\nPodaj liczbę nr 2: ");
-            liczba2 = double.Parse(Console.ReadLine());
-            Console.WriteLine("\n--------Menu--------");
-            Console.WriteLine("1. Dodawanie");
-            Console.WriteLine("2. Odejmowanie");
-            Console.WriteLine("3. Mnożenie");
-            Console.WriteLine("4. Dzielenie");
-            Console.Write("Wybierz działanie: ");
-            var wybor = double.Parse(Console.ReadLine());
-            if(wybor == 1)
+            ValidChars = new List<char>();
+            ValidChars.Add('+');
+            ValidChars.Add('-');
+            ValidChars.Add('*');
+            ValidChars.Add('/');
+        }
+
+        public void Run()
+        {
+            Console.WriteLine("Running calculator...\n");
+            Console.WriteLine("OPERATIONS:\n");
+            Console.WriteLine("+\taddition");
+            Console.WriteLine("-\tsubstraction");
+            Console.WriteLine("*\tmultiplication");
+            Console.WriteLine("/\tdivision \n");
+            Console.Write("Choose operation: ");
+            var operationCharacterInfo = Console.ReadKey();
+
+            while (ValidOperationUsingArray(operationCharacterInfo.KeyChar))
             {
-                Console.WriteLine($"Wynik twojego działania {liczba1} + {liczba2} = {liczba1 + liczba2}");
+                Console.WriteLine();
+                Console.Write("X number: ");
+                var x = Double.Parse(Console.ReadLine());
+                Console.Write("Y number: ");
+                var y = Double.Parse(Console.ReadLine());
+                PerformOperation(operationCharacterInfo.KeyChar, x, y);
+                Console.Write("Choose operation: ");
+                operationCharacterInfo = Console.ReadKey();
+                Console.WriteLine();
             }
-            else if (wybor == 2)
+        }
+
+        private bool ValidOperationUsingList(char operationCharacter)
+        {
+            return ValidChars.Contains(operationCharacter);
+        }
+
+        private bool ValidOperationUsingArray(char operationCharacter)
+        {
+            return ValidOperatorArray.Contains(operationCharacter);
+        }
+
+        private void PerformOperation(char operationChar, double x, double y)
+        {
+            switch (operationChar)
             {
-                Console.WriteLine($"Wynik twojego działania {liczba1} - {liczba2} = {liczba1 - liczba2}");
+                case '+':
+                    Console.WriteLine($"{x} + {y} = {Add(x, y)}");
+                    break;
+                case '-':
+                    Console.WriteLine($"{x} - {y} = {Substract(x, y)}");
+                    break;
+                case '*':
+                    Console.WriteLine($"{x} * {y} = {Multiply(x, y)}");
+                    break;
+                case '/':
+                    Console.WriteLine($"{x} / {y} = {Divide(x, y)}");
+                    break;
+                default:
+                    Console.WriteLine("Invalid operation...");
+                    break;
             }
-            else if (wybor == 3)
-            {
-                Console.WriteLine($"Wynik twojego działania {liczba1} * {liczba2} = {liczba1 * liczba2}");
-            }
-            else if (wybor == 4)
-            {
-                if (liczba2 == 0)
-                {
-                    Console.WriteLine($"Nie można dzielić przez 0");
-                }
-                else
-                {
-                    Console.WriteLine($"Wynik twojego działania {liczba1} / {liczba2} = {liczba1 / liczba2}");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Nie ma takiego działania");
-            }
+        }
+
+        private double Add(double x, double y)
+        {
+            return x + y;
+        }
+
+        private double Substract(double x, double y)
+        {
+            return x - y;
+        }
+
+        public double Multiply(double x, double y)
+        {
+            return x * y;
+        }
+
+        public double Divide(double x, double y)
+        {
+            return x / y;
         }
     }
 }
