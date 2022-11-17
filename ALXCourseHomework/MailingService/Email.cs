@@ -1,11 +1,8 @@
-﻿namespace ALXCourseHomework.MailingService
+﻿namespace AlxCourseHomework.MailingService
 {
     public class Email
     {
-        public string From;
-        public string To;
-        public string Subject;
-        public string Message;
+        public string From, To, Subject, Message;
 
         public Email(string from, string to, string subject, string message)
         {
