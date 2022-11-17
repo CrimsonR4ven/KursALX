@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KursALX", "KursALX\KursALX.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALXKalkulator", "ALXKalkulator\ALXKalkulator.csproj", "{8823E144-CF31-4190-979E-184888B81A4E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cyberpunk RPG game", "Cyberpunk RPG game\Cyberpunk RPG game.csproj", "{4A75C7E0-962F-4408-9A1F-9245BE813D52}"
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALXCourseHomework", "ALXCourseHomework\ALXCourseHomework.csproj", "{CB8CC1A3-93A6-4039-8A30-E69BCC183FB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonFunctionalities", "CommonFunctionalities\CommonFunctionalities.csproj", "{00F539A4-C802-4B1C-AF75-D635F8C7BD11}"

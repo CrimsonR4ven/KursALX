@@ -13,6 +13,7 @@ namespace Cyberpunk_RPG_game.Npcs
         int HP, Heal;
         Weapon EquippedWeapon;
         WeaponMelee Melee;
+        EnumEnemy EnemyType;
 
         public void HPLoss(int loss)
         {
