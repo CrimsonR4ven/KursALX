@@ -1,4 +1,6 @@
-﻿namespace ALXCourseHomework.MailingService
+﻿using AlxCourseHomework.MailingService;
+
+namespace ALXCourseHomework.MailingService
 {
     public class HomeworkTest1
     {

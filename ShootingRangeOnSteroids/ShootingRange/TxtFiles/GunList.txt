@@ -1,0 +1,27 @@
+﻿2mm Kolibri/2/1
+Astra Model 903/2/1
+Beretta M9/2/1
+Glock 23/2/1
+Ruby/2/1
+Astra 680/3/2
+Colt 1851 Navy Revolver/3/2
+Colt Cobra/3/2
+Colt Dragoon/3/2
+Type 26/3/2
+9A-91/4/3
+ACR/4/3
+AK-9/4/3
+AK-47/4/3
+Daewoo K2/4/3
+Benelli M1/3/4
+Benelli M3/3/4
+Browning Auto-5/3/4
+MTs-255/3/4
+Winchester Model 1897/3/4
+AA-52/4/5
+Breda 30/4/5
+Daewoo K3/4/5
+GAU-19 (Only here!)/4/5
+Barrett M99 (Only here!)/6/6
+Dragunov SVD/6/6
+SR-25/6/6

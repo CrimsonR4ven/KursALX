@@ -1,5 +1,8 @@
-﻿using AlxCourseHomework.MailingService;
-using AlxCourseHomework.MaterialAssignments;
+﻿using AlxCourseHomework.MaterialAssignments;
+using ALXCourseHomework.MailingService;
+using ALXCourseHomework.MaterialAssignments.Page21;
+using ALXCourseHomework.MaterialAssignments.Page23;
+using ALXCourseHomework.MaterialAssignments.Page25;
 
-Homework1Test.Run();
-VariablesHomework.PersonalData();
+ExerciseENUMS.EveryEnumValue();
+ExerciseENUMS.EnumToList();

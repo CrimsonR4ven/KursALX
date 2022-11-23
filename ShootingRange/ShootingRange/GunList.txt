@@ -1,0 +1,5 @@
+﻿HandGun/25
+Revolver/30
+Shotgun/35
+MachineGun/40
+Rifle/45
