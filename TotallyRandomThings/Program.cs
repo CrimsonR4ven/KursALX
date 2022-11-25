@@ -9,4 +9,6 @@ monika = new NumeroDue(monika);
 andrzej = new NumeroUno(andrzej);
 monika.BMI();
 andrzej.BMI();
+andrzej = Human.ChangeSex(andrzej);
+andrzej.BMI();
 
