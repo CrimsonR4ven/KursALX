@@ -1,9 +1,0 @@
-Product             Price  Amount
----------------------------------
-Astra Model 903     2     23
-AK-9                4     12
-
----------------------------------
-    Taxable:     72,38
-    Tax:         21,62
-    Final Price: 94

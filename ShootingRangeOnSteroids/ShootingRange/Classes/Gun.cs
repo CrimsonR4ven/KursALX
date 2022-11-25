@@ -11,10 +11,11 @@ namespace ShootingRangeOnSteroids.ShootingRange.Classes
         public bool          IsFullAuto;
         public GunType       Type;
         public LaneType      Lane;
-        public double FullAutoCost = 1.20; 
+        public double        FullAutoCost; 
 
         public Gun()
         {
+            FullAutoCost = 1.2;
             AmmoGonnaBuy = 0;
             CanFullAuto = false;
             IsFullAuto = false;
@@ -24,6 +25,7 @@ namespace ShootingRangeOnSteroids.ShootingRange.Classes
         {
             Console.WriteLine($" {Name} Price per shot: {Price}");
         }
+
         public void PresentCheckout()
         {
             double finalPrice = Price * AmmoGonnaBuy;

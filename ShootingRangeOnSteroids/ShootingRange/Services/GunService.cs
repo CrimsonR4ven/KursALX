@@ -133,7 +133,9 @@ namespace ShootingRangeOnSteroids.ShootingRange.Services
             int  i = 1;
             bool addGun = true;
             string? fullAutoChoice = null;
+
             Console.Clear();
+
             Console.WriteLine($"-----List of guns-----");
             foreach (Gun gun in GunList)
             {
@@ -141,32 +143,34 @@ namespace ShootingRangeOnSteroids.ShootingRange.Services
                 gun.Present();
                 i++;
             }
-            Console.Write("\nChoose gun:");
+
+            Console.Write("Choose gun:");
             int gunChoice = int.Parse(Console.ReadLine());
+
             if (GunList[0].CanFullAuto)
             {
-                Console.Write("\nfull auto? (y/n):");
+                Console.Write("full auto? (yes/no):");
                 fullAutoChoice = Console.ReadLine();
             }
-            Console.Write("\nHow much shots:");
+            Console.Write("How much shots:");
             int howMuch = int.Parse(Console.ReadLine());
 
             for(int j = 0; j < GunsBuy.Count; j++)
             {
-                if (GunsBuy[j].Name == GunList[gunChoice].Name)
+                if (GunsBuy[j].Name == GunList[gunChoice-1].Name)
                 {
                     GunsBuy[j].AmmoGonnaBuy += howMuch;
-                    if (fullAutoChoice.ToLower() == "y")
-                    {
-                        GunsBuy[j].IsFullAuto = true;
-                    }
                     addGun = false;
                 }
             }
             if (addGun)
             {
-                GunList[gunChoice].AmmoGonnaBuy += howMuch;
-                GunsBuy.Add(GunList[gunChoice]);
+                GunList[gunChoice-1].AmmoGonnaBuy += howMuch;
+                if (fullAutoChoice == "yes")
+                {
+                    GunList[gunChoice-1].IsFullAuto = true;
+                }
+                GunsBuy.Add(GunList[gunChoice-1]);
             }
         }
 

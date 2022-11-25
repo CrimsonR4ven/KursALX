@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALXCourseHomework", "ALXCou
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonFunctionalities", "CommonFunctionalities\CommonFunctionalities.csproj", "{00F539A4-C802-4B1C-AF75-D635F8C7BD11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShootingRange", "ShootingRange\ShootingRange.csproj", "{51995FA9-F862-4652-B2B6-88E595C021F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShootingRange", "ShootingRange\ShootingRange.csproj", "{51995FA9-F862-4652-B2B6-88E595C021F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShootingRangeOnSteroids", "ShootingRangeOnSteroids\ShootingRangeOnSteroids.csproj", "{BB430F09-301E-4F31-A71A-1CD31F9A5134}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShootingRangeOnSteroids", "ShootingRangeOnSteroids\ShootingRangeOnSteroids.csproj", "{BB430F09-301E-4F31-A71A-1CD31F9A5134}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TotallyRandomThings", "TotallyRandomThings\TotallyRandomThings.csproj", "{73D12239-6EB8-4BD0-ABED-2B636E1DBD16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{BB430F09-301E-4F31-A71A-1CD31F9A5134}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB430F09-301E-4F31-A71A-1CD31F9A5134}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB430F09-301E-4F31-A71A-1CD31F9A5134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73D12239-6EB8-4BD0-ABED-2B636E1DBD16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73D12239-6EB8-4BD0-ABED-2B636E1DBD16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73D12239-6EB8-4BD0-ABED-2B636E1DBD16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73D12239-6EB8-4BD0-ABED-2B636E1DBD16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
