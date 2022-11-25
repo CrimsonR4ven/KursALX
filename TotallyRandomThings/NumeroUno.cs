@@ -12,7 +12,7 @@
             Name = human.Name;
             SurName = human.SurName;
         }
-        public void BMI()
+        public override void BMI()
         {
             Console.WriteLine($"{Name} {SurName} BMI Klasy Uno");
         }
