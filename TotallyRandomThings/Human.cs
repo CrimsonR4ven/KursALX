@@ -19,13 +19,10 @@ namespace TotallyRandomThings
             {
                 case "uno":
                     return new NumeroUno(human);
-                    break;
                 case "due":
                     return new NumeroDue(human);
-                    break;
                 case "tre":
                     return new NumeroTre(human);
-                    break;
                 default:
                     Console.WriteLine("Wrong Choice!");
                     return human;
