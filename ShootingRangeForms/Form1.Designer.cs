@@ -446,7 +446,7 @@ namespace ShootingRangeForms
         #region Gun Thingy
         public void SortToLists()
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\k4spa\source\repos\KursALX\ShootingRangeForms\TxtFiles\GunList.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\K.Kisielinski\Source\Repos\KursALX\ShootingRangeForms\TxtFiles\GunList.txt");
             foreach (string line in lines)
             {
                 string[] gunData = line.Split('/');
@@ -486,7 +486,7 @@ namespace ShootingRangeForms
                     break;
             }
         }
-        public void GunAddToCart(object sender, EventArgs e,Gun GunUsed)
+        public void GunAddToCart(object sender, EventArgs e, Gun GunUsed)
         {
             bool ObjectExistsInCart = false;
             foreach (var gunItem in gunCart.GunsWillBuy.Select((value, i) => new { i, value }))
