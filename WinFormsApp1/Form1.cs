@@ -68,7 +68,14 @@ namespace WinFormsApp1
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			DisposeBuyTicket();
+			try
+			{
+                DisposeBuyTicket();
+            }
+			catch
+			{
+				DisposeAnswerSeeker();
+			}
 			InitBuyTicket();
 		}
 
@@ -99,6 +106,44 @@ namespace WinFormsApp1
 			{
 				textBox3.Text += number.ToString() + " ";
 			}
+			foreach (Ticket ticket in ListOfTickets)
+			{
+				textBox4.Text += ticket.Username + HowMuchWin(ticket); 
+			}
 		}
+
+		private string HowMuchWin(Ticket ticket)
+		{
+			var win = ": ";
+			var numberOfWinningNumbers = 0;
+            foreach(int number in ticket.Numbers)
+			{
+				if (TempNumbers.Contains(number))
+				{
+					numberOfWinningNumbers++;
+				}
+			}
+			if(numberOfWinningNumbers < 3)
+			{
+				win += $"you've got {numberOfWinningNumbers} numbers matching,\r\n no prize for thee sadly\r\n";
+			}
+            else if (numberOfWinningNumbers == 3)
+            {
+                win += $"you win absourdly high \r\namount of 24 PLN\r\n";
+            }
+            else if (numberOfWinningNumbers == 4)
+            {
+                win += $"you win 174 PLN\r\n";
+            }
+            else if (numberOfWinningNumbers == 5)
+            {
+                win += $"you win 6.482 PLN\r\n";
+            }
+			else
+			{
+                win += $"Sadly you win small \r\namount of 8.500.000PLN\r\n";
+            }
+			return win;
+        } 
 	}
 }

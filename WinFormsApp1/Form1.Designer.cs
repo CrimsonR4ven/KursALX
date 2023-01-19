@@ -976,6 +976,14 @@ namespace WinFormsApp1
 			button4.Dispose();
 			panel2.Dispose();
 		}
+		private void DisposeAnswerSeeker()
+		{
+            this.panel3.Dispose();
+            this.panel4.Dispose();
+            this.textBox3.Dispose();
+            this.textBox4.Dispose();
+            this.label2.Dispose();
+        }
 		#endregion
 		private Button button1;
 		private Button button2;
