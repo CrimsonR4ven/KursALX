@@ -28,7 +28,7 @@ namespace WinFormsApp1
 		{
 			if (TempNumbers.Count == 6 && textBox2.Text != "")
 			{
-				ListOfTickets.Add(new Ticket(textBox2.Text, TempNumbers));
+				ListOfTickets.Add(new Ticket(textBox2.Text, new List<int>(TempNumbers)));
 				TempNumbers.Clear();
 				PresentNumbers();
 				DisposeBuyTicket();
@@ -68,14 +68,7 @@ namespace WinFormsApp1
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			try
-			{
-                DisposeBuyTicket();
-            }
-			catch
-			{
-				DisposeAnswerSeeker();
-			}
+            DisposeBuyTicket();
 			InitBuyTicket();
 		}
 
@@ -92,7 +85,7 @@ namespace WinFormsApp1
 				c = true;
 				while (c == true)
 				{
-					temp = ((int)rand.Next() % 49) + 1;
+					temp = (int)rand.Next(1,49);
 					if (!TempNumbers.Exists(x => x == temp))
 					{
 						TempNumbers.Add(temp);
@@ -101,7 +94,7 @@ namespace WinFormsApp1
 				}
 			}
 			TempNumbers.Sort();
-			textBox3.Text = "Thee shall receiveth thy answ'rs \r\nWinning numbers art:\r\n";
+			textBox3.Text = $"Thee shall receiveth thy answ'rs {Environment.NewLine}Winning numbers art:{Environment.NewLine}";
 			foreach(int number in TempNumbers)
 			{
 				textBox3.Text += number.ToString() + " ";
@@ -111,37 +104,37 @@ namespace WinFormsApp1
 				textBox4.Text += ticket.Username + HowMuchWin(ticket); 
 			}
 		}
-
 		private string HowMuchWin(Ticket ticket)
 		{
 			var win = ": ";
 			var numberOfWinningNumbers = 0;
             foreach(int number in ticket.Numbers)
 			{
-				if (TempNumbers.Contains(number))
+				foreach(int i in TempNumbers)
 				{
+					if(number == i)
 					numberOfWinningNumbers++;
 				}
 			}
 			if(numberOfWinningNumbers < 3)
 			{
-				win += $"you've got {numberOfWinningNumbers} numbers matching,\r\n no prize for thee sadly\r\n";
+				win += $"you've got {numberOfWinningNumbers} numbers matching,\r\n no prize for thee sadly\r\n\r\n";
 			}
             else if (numberOfWinningNumbers == 3)
             {
-                win += $"you win absourdly high \r\namount of 24 PLN\r\n";
+                win += $"you win absourdly high \r\namount of 24 PLN\r\n\r\n";
             }
             else if (numberOfWinningNumbers == 4)
             {
-                win += $"you win 174 PLN\r\n";
+                win += $"you win 174 PLN\r\n\r\n";
             }
             else if (numberOfWinningNumbers == 5)
             {
-                win += $"you win 6.482 PLN\r\n";
+                win += $"you win 6.482 PLN\r\n\r\n";
             }
 			else
 			{
-                win += $"Sadly you win small \r\namount of 8.500.000PLN\r\n";
+                win += $"Sadly you win small \r\namount of 8.500.000PLN\r\n\r\n";
             }
 			return win;
         } 
