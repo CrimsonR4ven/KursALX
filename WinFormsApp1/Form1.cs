@@ -1,5 +1,5 @@
 using Lotto.Objects;
-
+using Lotto.Enums;
 namespace WinFormsApp1
 {
 	public partial class Form1 : Form
@@ -8,6 +8,7 @@ namespace WinFormsApp1
 		{
 			InitializeComponent();
 			InitBuyTicket();
+			State = FormState.BUYTICKET;
 		}
 
 		private void panel2_Paint(object sender, PaintEventArgs e)
@@ -26,7 +27,7 @@ namespace WinFormsApp1
 
 		private void button4_Click(object sender, EventArgs e)
 		{
-			if (TempNumbers.Count == 6 && textBox2.Text != "")
+			if (TempNumbers.Count == 6 && textBox2.Text != String.Empty)
 			{
 				ListOfTickets.Add(new Ticket(textBox2.Text, new List<int>(TempNumbers)));
 				TempNumbers.Clear();
@@ -38,7 +39,7 @@ namespace WinFormsApp1
 
 		private void NumbersCheckedChanged(object sender, EventArgs e)
 		{
-			var checkBox = (sender as CheckBox);
+			CheckBox checkBox = (sender as CheckBox);
 			if (checkBox.Checked == true && TempNumbers.Count < 6)
 			{
 				TempNumbers.Add(int.Parse(checkBox.Text));
@@ -68,14 +69,30 @@ namespace WinFormsApp1
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-            DisposeBuyTicket();
+			if (State == FormState.BUYTICKET)
+			{
+				DisposeBuyTicket();
+			}
+			else
+			{
+				DisposeAnswerSeeker();
+			}
 			InitBuyTicket();
+			State = FormState.BUYTICKET;
 		}
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-			DisposeBuyTicket();
+			if(State == FormState.BUYTICKET)
+			{
+				DisposeBuyTicket();
+			}
+			else
+			{
+				DisposeAnswerSeeker();
+			}
 			InitAnswerSeeker();
+			State = FormState.RANDOMNUMBAH;
 			TempNumbers.Clear();
 			Random rand = new Random();
 			bool c = true;
@@ -106,10 +123,11 @@ namespace WinFormsApp1
 		}
 		private string HowMuchWin(Ticket ticket)
 		{
-			var win = ": ";
-			var numberOfWinningNumbers = 0;
+			string win = ": \r\nNumbers: ";
+			int numberOfWinningNumbers = 0;
             foreach(int number in ticket.Numbers)
 			{
+				win += $"{number} ";
 				foreach(int i in TempNumbers)
 				{
 					if(number == i)
@@ -118,25 +136,30 @@ namespace WinFormsApp1
 			}
 			if(numberOfWinningNumbers < 3)
 			{
-				win += $"you've got {numberOfWinningNumbers} numbers matching,\r\n no prize for thee sadly\r\n\r\n";
+				win += $"\r\nYou've got ({numberOfWinningNumbers}) numbers matching, no prize for thee sadly\r\n\r\n";
 			}
             else if (numberOfWinningNumbers == 3)
             {
-                win += $"you win absourdly high \r\namount of 24 PLN\r\n\r\n";
+                win += $"\r\nYou win absurdly high \r\namount of 24 PLN\r\n\r\n";
             }
             else if (numberOfWinningNumbers == 4)
             {
-                win += $"you win 174 PLN\r\n\r\n";
+                win += $"\r\nYou win 174 PLN\r\n\r\n";
             }
             else if (numberOfWinningNumbers == 5)
             {
-                win += $"you win 6.482 PLN\r\n\r\n";
+                win += $"\r\nYou win 6.482 PLN\r\n\r\n";
             }
 			else
 			{
-                win += $"Sadly you win small \r\namount of 8.500.000PLN\r\n\r\n";
+                win += $"\r\nSadly you win small \r\namount of 8.500.000PLN\r\n\r\n";
             }
 			return win;
-        } 
+        }
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			ListOfTickets.Clear();
+		}
 	}
 }
