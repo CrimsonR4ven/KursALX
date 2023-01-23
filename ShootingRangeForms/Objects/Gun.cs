@@ -1,20 +1,44 @@
-﻿namespace ShootingRangeForms.Objects
+﻿using ShootingRangeForms.Enums;
+using ShootingRangeData.ShootingRangeDB;
+namespace ShootingRangeForms.Objects
 {
-    public class Gun
+    public class GunHolder
     {
-        public string Name;
-        public string Description;
-        public string ImgLocation;
+        public int    Amount;
         public double Price;
-        public int Amount;
+        public string Name;
+        public string ImgName;
+        public string Description;
+        public LaneEnum Lane;
+        public CategoryEnum Category;
 
-        public Gun(string name, string description, string imgLocation, double price)
+        public GunHolder(string name, string description, string imgName, double price)
         {
-            Name = name;
+            Name        = name;
             Description = description;
-            ImgLocation = imgLocation;
-            Price = price;
-            Amount = 0;
+            ImgName     = imgName;
+            Price       = price;
+            Amount      = 0; 
         }
+        public GunHolder(Gun gun)
+		{
+            Amount      = 0;
+            Name        = gun.Name;
+            Price       = gun.Price;
+            ImgName     = gun.ImgName;
+            Description = gun.Description;
+            Lane        = StringToEnum.GetLane(gun.Lane);
+            Category    = StringToEnum.GetCategory(gun.Category);
+		}
+
+        public static List<GunHolder> FromGunList(List<Gun> gunList)
+		{
+            List<GunHolder> list = new List<GunHolder>();
+            foreach(Gun gun in gunList)
+			{
+                list.Add(new GunHolder(gun));
+			}
+            return list;
+		}
     }
 }
