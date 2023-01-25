@@ -39,7 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunnyAppDoesThings", "Funny
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickAnihilation", "QuickAnihilation\QuickAnihilation.csproj", "{F71D4BC9-36C3-4B21-BCCD-3A0938BD1C97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lotto", "WinFormsApp1\Lotto.csproj", "{DD55C877-4245-43F1-B427-35FCC9AB49A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lotto", "WinFormsApp1\Lotto.csproj", "{DD55C877-4245-43F1-B427-35FCC9AB49A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADODemo", "ADODemo\ADODemo.csproj", "{BCD9D25B-0772-4539-9AD8-2E3BC68C4837}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,6 +117,10 @@ Global
 		{DD55C877-4245-43F1-B427-35FCC9AB49A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD55C877-4245-43F1-B427-35FCC9AB49A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD55C877-4245-43F1-B427-35FCC9AB49A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCD9D25B-0772-4539-9AD8-2E3BC68C4837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCD9D25B-0772-4539-9AD8-2E3BC68C4837}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCD9D25B-0772-4539-9AD8-2E3BC68C4837}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCD9D25B-0772-4539-9AD8-2E3BC68C4837}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
