@@ -8,7 +8,7 @@ namespace ShootingRangeForms.Objects
     public class GunPresentBox
     {
         private string PriceString;
-        public Gun GunUsed;
+        public GunHolder GunUsed;
         public Label Name;
         public Label Price;
         public Label TypeOfLane;
@@ -18,7 +18,7 @@ namespace ShootingRangeForms.Objects
         public Button BuyButton;
         public Panel ContentBox;
 
-        public GunPresentBox(Gun gunUsed)
+        public GunPresentBox(GunHolder gunUsed)
         {
             ContentBox = new Panel();
             ContentBox.BackColor = Color.White;

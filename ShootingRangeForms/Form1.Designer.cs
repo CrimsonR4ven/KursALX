@@ -398,7 +398,7 @@ namespace ShootingRangeForms
         {
 
         }
-        private void InitalizeGunBoxes(List<Gun> gunList)
+        private void InitalizeGunBoxes(List<GunHolder> gunList)
         {
             object sender = new object();
             ObjectListCreate(gunList);
@@ -453,17 +453,17 @@ namespace ShootingRangeForms
                 ClassifyGun(gunData[0], gunData[1], gunData[2], double.Parse(gunData[3]), int.Parse(gunData[4]));
             }
         }
-        private void ObjectListCreate(List<Gun> gunsList)
+        private void ObjectListCreate(List<GunHolder> gunsList)
         {
             GunsPresent = new List<GunPresentBox>();
-            foreach(Gun gun in gunsList)
+            foreach(GunHolder gun in gunsList)
             {
                 GunsPresent.Add(new GunPresentBox(gun));
             }
         }
         private void ClassifyGun(string name, string description, string image, double price, int type)
         {
-            Gun gun = new Gun(name, description, image, price);
+            GunHolder gun = new GunHolder(name, description, image, price);
             switch (type)
             {
                 case 1:
@@ -486,12 +486,12 @@ namespace ShootingRangeForms
                     break;
             }
         }
-        public void GunAddToCart(object sender, EventArgs e, Gun GunUsed)
+        public void GunAddToCart(object sender, EventArgs e, GunHolder GunUsed)
         {
             bool ObjectExistsInCart = false;
             foreach (var gunItem in gunCart.GunsWillBuy.Select((value, i) => new { i, value }))
             {
-                Gun gun = gunItem.value;
+                GunHolder gun = gunItem.value;
                 int i = gunItem.i;
                 if (gun.Name == GunUsed.Name)
                 {
@@ -513,15 +513,15 @@ namespace ShootingRangeForms
         #region Variables Definition
         int height = 20;
         private GunCart gunCart = new GunCart();
-        private List<Gun> HandGuns = new List<Gun>();
-        private List<Gun> Revolvers = new List<Gun>();
-        private List<Gun> Rifles = new List<Gun>();
-        private List<Gun> Shotguns = new List<Gun>();
-        private List<Gun> MachineGuns = new List<Gun>();
-        private List<Gun> SniperRifles = new List<Gun>();
-        private List<Gun> gunsUsed = new List<Gun>();
+        private List<GunHolder> HandGuns = new List<GunHolder>();
+        private List<GunHolder> Revolvers = new List<GunHolder>();
+        private List<GunHolder> Rifles = new List<GunHolder>();
+        private List<GunHolder> Shotguns = new List<GunHolder>();
+        private List<GunHolder> MachineGuns = new List<GunHolder>();
+        private List<GunHolder> SniperRifles = new List<GunHolder>();
+        private List<GunHolder> gunsUsed = new List<GunHolder>();
         private List<GunPresentBox> GunsPresent = new List<GunPresentBox>();
-        private GunPresentBox GunPresentBoxOb = new GunPresentBox(new Gun("fast", "fast", "ye", 5));
+        private GunPresentBox GunPresentBoxOb = new GunPresentBox(new GunHolder("fast", "fast", "ye", 5));
         private Button ConfigureButton;
         private Button CheckoutButton;
         private Label ConfigureLabel;
