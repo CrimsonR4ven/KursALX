@@ -13,7 +13,10 @@ namespace ShootingRangeData.ShootingRangeDB
         public DbSet<GunCategory> GunCategories { get; set; }
         public string DbPath { get; }
         private string ConnString;
-
+        public ShootingRangeContext()
+        {
+            ConnString = "Server=tcp:shootingrange.database.windows.net,1433;Initial Catalog=ShootingRange;Persist Security Info=False;User ID=CloudSA0f94f61f;Password=Kacper2005;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        }
         public ShootingRangeContext(string connString)
         {
             ConnString = connString;

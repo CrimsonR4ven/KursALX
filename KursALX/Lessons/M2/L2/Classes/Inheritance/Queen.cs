@@ -1,10 +1,10 @@
 ﻿using KursALX.Lessons.M1.L2.Enums;
 
-namespace AFALXCourse.Lessons.M2.L2.Classes.Inheritance
+namespace KursALX.Lessons.M2.L2.Classes.Inheritance
 {
-    public class Rook : ChessPiece
+    public class Queen : ChessPiece
     {
-        public Rook() : base()
+        public Queen() : base()
         {
             Type = ChessFigureTypes.ROOK;
         }

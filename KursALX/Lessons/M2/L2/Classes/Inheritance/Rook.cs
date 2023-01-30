@@ -1,4 +1,5 @@
-﻿namespace KursALX.Lessons.M2.L2.Classes.Inheritance
+﻿using KursALX.Lessons.M2.L2.Classes.Inheritance;
+namespace KursALX.Lessons.M2.L2.Classes.Inheritance
 {
     public class Rook : ChessPiece
     {

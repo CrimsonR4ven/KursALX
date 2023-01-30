@@ -1,7 +1,7 @@
-﻿using 
+﻿ 
 namespace ShootingRange.ShootingRange
 {
-    public abstract class Gun
+    public class Gun
     {
         public int AmmoGonnaBuy;
         public double Price;

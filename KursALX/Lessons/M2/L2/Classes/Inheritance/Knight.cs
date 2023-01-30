@@ -1,6 +1,6 @@
 ﻿using KursALX.Lessons.M1.L2.Enums;
 
-namespace AFALXCourse.Lessons.M2.L2.Classes.Inheritance
+namespace KursALX.Lessons.M2.L2.Classes.Inheritance
 {
     public class Knight : ChessPiece
     {

@@ -1,4 +1,5 @@
 ﻿using ShootingRangeForms.Objects;
+using ShootingRangeForms.Enums;
 
 namespace ShootingRangeForms
 {
@@ -464,24 +465,24 @@ namespace ShootingRangeForms
         private void ClassifyGun(string name, string description, string image, double price, int type)
         {
             GunHolder gun = new GunHolder(name, description, image, price);
-            switch (type)
+            switch (gun.Category)
             {
-                case 1:
+                case CategoryEnum.HANDGUNS:
                     HandGuns.Add(gun);
                     break;
-                case 2:
+                case CategoryEnum.REVOLVERS:
                     Revolvers.Add(gun);
                     break;
-                case 3:
+                case CategoryEnum.RIFLES:
                     Rifles.Add(gun);
                     break;
-                case 4:
+                case CategoryEnum.SHOTGUNS:
                     Shotguns.Add(gun);
                     break;
-                case 5:
+                case CategoryEnum.MACHINEGUNS:
                     MachineGuns.Add(gun);
                     break;
-                case 6:
+                case CategoryEnum.SNIPERRIFLES:
                     SniperRifles.Add(gun);
                     break;
             }

@@ -20,7 +20,10 @@ namespace ShootingRangeForms.Objects
 		public static List<BundleHolder> FromLaneList(List<Bundle> bundleList)
 		{
 			List<BundleHolder> list = new List<BundleHolder>();
-			foreach (Bundle bundle in bundleList)
+			foreach (Bundle bundle in
+				
+				
+				bundleList)
 			{
 				list.Add(new BundleHolder(bundle));
 			}

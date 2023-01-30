@@ -18,7 +18,7 @@ namespace ShootingRangeForms.Enums
                     return CategoryEnum.SHOTGUNS;
                 case ("Machine Guns"):
                     return CategoryEnum.MACHINEGUNS;
-                case ("Sniper Rifle"):
+                case ("Sniper Rifles"):
                     return CategoryEnum.SNIPERRIFLES;
                 default:
                     return CategoryEnum.UNDEFINED;
