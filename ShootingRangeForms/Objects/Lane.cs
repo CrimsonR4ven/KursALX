@@ -18,7 +18,7 @@ namespace ShootingRangeForms.Objects
 			Distance    = lane.Distance;
 			RentPrice   = lane.RentPrice;
 			Description = lane.Description;
-			LaneType    = StringToEnum.GetLane(lane.Lane);
+			LaneType    = OperationsOnEnum.GetLaneEnum(lane.Lane);
 		}
 		public static List<LaneHolder> FromLaneList(List<GunLane> laneList)
 		{

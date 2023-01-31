@@ -4,7 +4,7 @@
 	{
 		public List<Gun> GetGunListFromCategory(string category, string connString)
 		{
-			using (ShootingRangeContext db = new ShootingRangeContext(connString))
+			using (ShootingRangeContext db = new ShootingRangeContext())
 			{
 				return db.Guns.Where(g => g.Category.Name.ToLower() == category.ToLower()).ToList();
 			}

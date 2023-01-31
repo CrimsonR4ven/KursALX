@@ -2,7 +2,7 @@
 
 namespace ShootingRangeForms.Enums
 {
-	public static class StringToEnum
+	public static class OperationsOnEnum
 	{
         public static CategoryEnum GetCategory(GunCategory category)
         {
@@ -24,7 +24,27 @@ namespace ShootingRangeForms.Enums
                     return CategoryEnum.UNDEFINED;
             }
         }
-        public static LaneEnum GetLane(GunLaneType lane)
+        public static string GetCategory(CategoryEnum category)
+        {
+            switch (category)
+            {
+                case (CategoryEnum.HANDGUNS):
+                    return "HandGuns";
+                case (CategoryEnum.REVOLVERS):
+                    return "Revolvers";
+                case (CategoryEnum.RIFLES):
+                    return "Rifles";
+                case (CategoryEnum.SHOTGUNS):
+                    return "Shotguns";
+                case (CategoryEnum.MACHINEGUNS):
+                    return "Machine Guns";
+                case (CategoryEnum.SNIPERRIFLES):
+                    return "Sniper Rifles";
+                default:
+                    throw new Exception("Undefined category");
+            }
+        }
+        public static LaneEnum GetLaneEnum(GunLaneType lane)
         {
             switch (lane.Name)
             {

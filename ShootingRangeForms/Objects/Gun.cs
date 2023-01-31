@@ -27,8 +27,8 @@ namespace ShootingRangeForms.Objects
             Price       = gun.Price;
             ImgName     = gun.ImgName;
             Description = gun.Description;
-            Lane        = StringToEnum.GetLane(gun.Lane);
-            Category    = StringToEnum.GetCategory(gun.Category);
+            Lane        = OperationsOnEnum.GetLaneEnum(gun.Lane);
+            Category    = OperationsOnEnum.GetCategory(gun.Category);
 		}
 
         public static List<GunHolder> FromGunList(List<Gun> gunList)

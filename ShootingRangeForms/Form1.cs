@@ -1,3 +1,5 @@
+using ShootingRangeForms.Objects;
+
 namespace ShootingRangeForms
 {
     public partial class Form1 : Form
@@ -38,45 +40,11 @@ namespace ShootingRangeForms
             InitializeStartMenu();
         }
         #region Radio buttons on checkout
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
             ListDispose();
-            InitalizeGunBoxes(HandGuns);
-            LastList = 1;
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            ListDispose();
-            InitalizeGunBoxes(Revolvers);
-            LastList = 1;
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            ListDispose();
-            InitalizeGunBoxes(Rifles);
-            LastList = 1;
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            ListDispose();
-            InitalizeGunBoxes(Shotguns);
-            LastList = 1;
-        }
-
-        private void radioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-            ListDispose();
-            InitalizeGunBoxes(MachineGuns);
-            LastList = 1;
-        }
-
-        private void radioButton6_CheckedChanged(object sender, EventArgs e)
-        {
-            ListDispose();
-            InitalizeGunBoxes(SniperRifles);
+            var radioBtn = (RadioButton)sender;
+            InitalizeGunBoxes(GunHolder.FromGunList(dBAccess.GetGunListFromCategory(radioBtn.Text, connString)));
             LastList = 1;
         }
 
