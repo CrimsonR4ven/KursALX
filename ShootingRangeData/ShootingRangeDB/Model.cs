@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace ShootingRangeData.ShootingRangeDB
 {
@@ -24,7 +25,8 @@ namespace ShootingRangeData.ShootingRangeDB
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer(ConnString);
+            options.UseLazyLoadingProxies().UseSqlServer(ConnString);
+            options.ConfigureWarnings(b => b.Ignore(CoreEventId.LazyLoadOnDisposedContextWarning));
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,10 +34,12 @@ namespace ShootingRangeData.ShootingRangeDB
 //                .ToTable(tb => tb.HasTrigger("SomeTrigger"));
         }
     }
+    [PrimaryKey("ID")]
     public class Bundle
     {
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		
         public Guid ID { get; set; }
 		[Required]
         public string Name { get; set; }
@@ -44,29 +48,31 @@ namespace ShootingRangeData.ShootingRangeDB
         [Required]
         public double Price { get; set; }
         [Required]
-        public List<Gun> Guns { get; set; }
+        public virtual List<Gun> Guns { get; set; }
     }  
     [Index(nameof(Name))]
+    [PrimaryKey("CategoryID")]
     public class GunCategory
     {
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid ID { get; set; }
+        public Guid CategoryID { get; set; }
         [Required]
         [MaxLength(30)]
         public string Name { get; set; }
-        public List<Gun> Guns { get; set; }
+        public virtual List<Gun> Guns { get; set; }
     }
+	[PrimaryKey("LaneID")]
     public class GunLaneType
     {
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid ID { get; set; }
+        public Guid LaneID { get; set; }
         [Required]
         [MaxLength(30)]
         public string Name { get; set; }
-        public List<Gun> Guns { get; set; }
-        public List<GunLane> GunLanes { get; set; }
+        public virtual List<Gun> Guns { get; set; }
+        public virtual List<GunLane> GunLanes { get; set; }
     }
     [Index(nameof(Price))]
 	[Index(nameof(Name))]
@@ -85,13 +91,15 @@ namespace ShootingRangeData.ShootingRangeDB
         [MaxLength(200)]
         public string Description { get; set; }
         [Required]
-        public double Price { get; set; } 
+        public double Price { get; set; }
         [Required]
-        public GunCategory Category { get; set; }
+        [ForeignKey("CategoryID")]
+        public virtual GunCategory Category { get; set; }
         [Required]
-        public GunLaneType Lane { get; set; }
-		[Required]
-        public List<Bundle> Bundles { get; set; }
+        [ForeignKey("LaneID")]
+        public virtual GunLaneType Lane { get; set; }
+        [Required]
+        public virtual List<Bundle> Bundles { get; set; }
     }
     public class GunLane
 	{
@@ -112,6 +120,6 @@ namespace ShootingRangeData.ShootingRangeDB
         [Required]
         public double RentPrice { get; set; }
         [Required]
-        public GunLaneType Lane { get; set; }
+        public virtual GunLaneType Lane { get; set; }
     }
 }

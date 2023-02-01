@@ -2,12 +2,26 @@
 {
 	public class DBAccessClass
 	{
+		ShootingRangeContext db;
+		public DBAccessClass()
+		{ 
+			db = new ShootingRangeContext();
+		}
+		public bool TestConnection()
+		{
+			try
+			{
+				var funny = db.Guns.Where(g => g.Category.Name == "funny").ToList();
+			}
+			catch
+			{
+				return false;
+			}
+			return true;
+		}
 		public List<Gun> GetGunListFromCategory(string category, string connString)
 		{
-			using (ShootingRangeContext db = new ShootingRangeContext())
-			{
-				return db.Guns.Where(g => g.Category.Name.ToLower() == category.ToLower()).ToList();
-			}
+			return db.Guns.Where(g => g.Category.Name == category).OrderBy(g => g.Name).ToList();
 		}
 		public List<Bundle> GetBundleList(string connString)
 		{

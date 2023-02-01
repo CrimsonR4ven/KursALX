@@ -4,9 +4,11 @@ namespace ShootingRangeForms
 {
     public partial class Form1 : Form
     {
-        int LastList = 1;
         public Form1()
         {
+            //todo Loading screen
+            dBAccess.TestConnection();
+            // if true end loading screen else no connection window
             InitializeForm();
             InitializeStartMenu();
         }
@@ -20,7 +22,7 @@ namespace ShootingRangeForms
         {
             DisposeStartMenu();
             InitializeComponent();
-            InitalizeGunBoxes(HandGuns);
+            InitalizeGunBoxes(GunHolder.FromGunList(dBAccess.GetGunListFromCategory("HandGuns", connString)));
             //InitializeCheckoutMenu();
         }
 
@@ -45,56 +47,30 @@ namespace ShootingRangeForms
             ListDispose();
             var radioBtn = (RadioButton)sender;
             InitalizeGunBoxes(GunHolder.FromGunList(dBAccess.GetGunListFromCategory(radioBtn.Text, connString)));
-            LastList = 1;
         }
 
         private void radioButton7_CheckedChanged(object sender, EventArgs e)
         {
             ListDispose();
-
-            LastList = 2;
         }
         private void radioButton8_CheckedChanged(object sender, EventArgs e)
         {
             ListDispose();
-
-            LastList = 3;
         }
         private void radioButton9_CheckedChanged(object sender, EventArgs e)
         {
             ListDispose();
-
-            LastList = 4;
         }
         private void radioButton10_CheckedChanged(object sender, EventArgs e)
         {
             ListDispose();
-
-            LastList = 5;
+            InitalizeGunCartBoxes();       
         }
         #endregion
         private void ListDispose()
         {
-            if (LastList == 1)
-            {
-                DisposeGunBoxes();
-            }
-            else if (LastList == 2)
-            {
-
-            }
-            else if (LastList == 3)
-            {
-
-            }
-            else if (LastList == 4)
-            {
-
-            }
-            else if (LastList == 5)
-            {
-
-            }
+            DisposeGunBoxes(GunsPresent);
+            //todo lookin bad, fix that
         }
     }
 }

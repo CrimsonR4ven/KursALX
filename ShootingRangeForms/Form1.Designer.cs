@@ -2,6 +2,7 @@
 using ShootingRangeForms.Enums;
 using ShootingRangeData.ShootingRangeDB;
 using Microsoft.Extensions.Configuration;
+using ShootingRangeForms.Interfaces;
 
 namespace ShootingRangeForms
 {
@@ -241,256 +242,12 @@ namespace ShootingRangeForms
         }
 
         #endregion
-
-        #region My Initializations
-        private void InitializeForm()
-        {
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(1046, 659);
-            this.Name = "Shooting Range";
-            this.Text = "Shooting Range";
-        }
-
-        private void InitializeStartMenu()
-        {
-            this.ConfigureButton = new System.Windows.Forms.Button();
-            this.CheckoutButton = new System.Windows.Forms.Button();
-            this.ConfigureLabel = new System.Windows.Forms.Label();
-            this.CheckoutLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // ConfigureButton
-            // 
-            this.ConfigureButton.Location = new System.Drawing.Point(108, 149);
-            this.ConfigureButton.Name = "ConfigureButton";
-            this.ConfigureButton.Size = new System.Drawing.Size(111, 23);
-            this.ConfigureButton.TabIndex = 0;
-            this.ConfigureButton.UseVisualStyleBackColor = true;
-            this.ConfigureButton.Click += new System.EventHandler(this.Configure_Click);
-            // 
-            // CheckoutButton
-            // 
-            this.CheckoutButton.Location = new System.Drawing.Point(108, 211);
-            this.CheckoutButton.Name = "CheckoutButton";
-            this.CheckoutButton.Size = new System.Drawing.Size(111, 23);
-            this.CheckoutButton.TabIndex = 2;
-            this.CheckoutButton.UseVisualStyleBackColor = true;
-            this.CheckoutButton.Click += new System.EventHandler(this.ShopServiceButton_Click);
-            // 
-            // ConfigureLabel
-            // 
-            this.ConfigureLabel.AutoSize = true;
-            this.ConfigureLabel.BackColor = System.Drawing.Color.Black;
-            this.ConfigureLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.ConfigureLabel.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ConfigureLabel.Location = new System.Drawing.Point(100, 115);
-            this.ConfigureLabel.Name = "ConfigureLabel";
-            this.ConfigureLabel.Size = new System.Drawing.Size(85, 15);
-            this.ConfigureLabel.TabIndex = 3;
-            this.ConfigureLabel.Text = "Configure App";
-            // 
-            // CheckoutLabel
-            // 
-            this.CheckoutLabel.AutoSize = true;
-            this.CheckoutLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.CheckoutLabel.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CheckoutLabel.Location = new System.Drawing.Point(105, 180);
-            this.CheckoutLabel.Name = "CheckoutLabel";
-            this.CheckoutLabel.Size = new System.Drawing.Size(80, 15);
-            this.CheckoutLabel.TabIndex = 4;
-            this.CheckoutLabel.Text = "Self Checkout";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Maroon;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(43, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(242, 32);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Shooting Range App";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::ShootingRangeForms.Properties.Resources.Revolver;
-            this.pictureBox1.Image = global::ShootingRangeForms.Properties.Resources.Revolver;
-            this.pictureBox1.Location = new System.Drawing.Point(-1067, 187);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(206, 229);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.ConfigureLabel);
-            this.panel1.Controls.Add(this.ConfigureButton);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.CheckoutButton);
-            this.panel1.Controls.Add(this.CheckoutLabel);
-            this.panel1.Location = new System.Drawing.Point(360, -6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(324, 687);
-            this.panel1.TabIndex = 7;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::ShootingRangeForms.Properties.Resources.Revolver;
-            this.pictureBox2.Location = new System.Drawing.Point(690, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(346, 328);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::ShootingRangeForms.Properties.Resources.Revolver2;
-            this.pictureBox3.Location = new System.Drawing.Point(8, 17);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(346, 328);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(95, 456);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Made by: Crimson Raven";
-            // 
-            // Form1
-            // 
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.ResumeLayout(false);
-        }
-        private void InitializeCheckoutMenu()
-        {
-
-        }
-        private void InitalizeGunBoxes(List<GunHolder> gunList)
-        {
-            object sender = new object();
-            ObjectListCreate(gunList);
-            height = 20;
-            foreach (GunPresentBox gunPresent in GunsPresent)
-            {
-                gunPresent.ContentBox.Location = new Point(panel2.Width + 20, height);
-                gunPresent.ContentBox.Size = new Size(ClientSize.Width - panel2.Width - 40, 100);
-                Controls.Add(gunPresent.ContentBox);
-                height += gunPresent.ContentBox.Height + 20;
-            }
-        }
-        #endregion
-
-        #region My Disposings
-        private void DisposeStartMenu()
-        {
-            ConfigureButton.Dispose();
-            ConfigureLabel.Dispose();
-            CheckoutButton.Dispose();
-            CheckoutLabel.Dispose();
-            pictureBox1.Dispose();
-            pictureBox2.Dispose();
-            pictureBox3.Dispose();
-            panel1.Dispose();
-            label1.Dispose();
-            label2.Dispose();
-        }
-        public void DisposeCheckoutMenu()
-        {
-            panel2.Dispose();
-            BackCheckout.Dispose();
-            BuyCheckout.Dispose();
-        }
-
-        public void DisposeGunBoxes()
-        {
-            foreach(GunPresentBox gunPresent in GunsPresent)
-            {
-                gunPresent.ContentBox.Dispose();
-            }
-        }
-        #endregion
-
-        #region Gun Thingy
-        private void ObjectListCreate(List<GunHolder> gunsList)
-        {
-            GunsPresent.Clear();
-            foreach(GunHolder gun in gunsList)
-            {
-                GunsPresent.Add(new GunPresentBox(gun));
-            }
-        }
-        public void GunAddToCart(object sender, EventArgs e, GunHolder GunUsed)
-        {
-            bool ObjectExistsInCart = false;
-            foreach (var gunItem in gunCart.GunsWillBuy.Select((value, i) => new { i, value }))
-            {
-                GunHolder gun = gunItem.value;
-                int i = gunItem.i;
-                if (gun.Name == GunUsed.Name)
-                {
-                    gunCart.GunsWillBuy[i].Amount += GunUsed.Amount;
-                    ObjectExistsInCart = true;
-                }
-            }
-            if (!ObjectExistsInCart)
-            {
-                gunCart.GunsWillBuy.Add(GunUsed);
-            }
-        }
-        private void LoadGunAddToCart()
-        {
-
-        }
-        #endregion
-
         #region Variables Definition
         int height = 20;
         private string connString = Program.config.GetSection("ConnectionStrings").GetSection("SqlServer").Get<string>();
-        private GunCart gunCart = new GunCart();
-        private List<GunHolder> HandGuns = new List<GunHolder>();
-        private List<GunHolder> Revolvers = new List<GunHolder>();
-        private List<GunHolder> Rifles = new List<GunHolder>();
-        private List<GunHolder> Shotguns = new List<GunHolder>();
-        private List<GunHolder> MachineGuns = new List<GunHolder>();
-        private List<GunHolder> SniperRifles = new List<GunHolder>();
+        private Cart gunCart = new Cart();
         private List<GunHolder> gunsUsed = new List<GunHolder>();
-        private List<GunPresentBox> GunsPresent = new List<GunPresentBox>();
-        private GunPresentBox GunPresentBoxOb = new GunPresentBox(new GunHolder("fast", "fast", "ye", 5));
+        private List<IPresentBox> GunsPresent = new List<IPresentBox>();
         private Button ConfigureButton;
         private Button CheckoutButton;
         private Label ConfigureLabel;
@@ -514,9 +271,8 @@ namespace ShootingRangeForms
         private Label label3;
         private RadioButton radioButton9;
         private RadioButton radioButton8;
-        #endregion
-
-        private RadioButton radioButton10;
-        private DBAccessClass dBAccess = new DBAccessClass();
-    }
+		private RadioButton radioButton10;
+		private DBAccessClass dBAccess = new DBAccessClass();
+		#endregion
+	}
 }
