@@ -6,15 +6,18 @@ namespace ShootingRangeForms.Objects
 	public class LaneHolder
 	{
 		public int    Distance;
+		public string ImgName;
 		public string Name;
 		public double RentPrice;
 		public string Description;
+		public int RentHours;
 
 		public LaneEnum LaneType;
 
 		public LaneHolder(GunLane lane)
 		{
 			Name        = lane.Name;
+			ImgName		= lane.ImgName;
 			Distance    = lane.Distance;
 			RentPrice   = lane.RentPrice;
 			Description = lane.Description;

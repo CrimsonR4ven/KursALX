@@ -60,5 +60,21 @@ namespace ShootingRangeForms.Enums
                     return LaneEnum.UNDEFINED;
             }
         }
+        public static string GetLaneType(LaneEnum type)
+        {
+            switch (type)
+            {
+                case (LaneEnum.SHORT):
+                    return "Short";
+                case (LaneEnum.MIDDLE):
+                    return "Middle";
+                case (LaneEnum.LONG):
+                    return "Long";
+                case (LaneEnum.XLONG):
+                    return "Extra Long";
+                default:
+                    throw new Exception("Undefined type");
+            }
+        }
     }
 }

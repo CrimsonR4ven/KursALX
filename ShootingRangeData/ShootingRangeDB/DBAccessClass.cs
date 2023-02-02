@@ -32,10 +32,11 @@
 		}
 		public List<GunLane> GetLaneList(string connString)
 		{
-			using (ShootingRangeContext db = new ShootingRangeContext(connString))
-			{
-				return db.Lanes.ToList();
-			}
+			return db.Lanes.ToList();
+		}
+		public List<GunLane> GetLaneListFromType(string type,string connString)
+		{
+			return db.Lanes.Where(l => l.Lane.Name == type).ToList();
 		}
 	}
 }

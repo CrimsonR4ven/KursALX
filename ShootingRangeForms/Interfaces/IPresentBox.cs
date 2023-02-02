@@ -4,5 +4,6 @@
 	{
 		public void Dispose();
 		public void AddToCart(object sender, EventArgs e);
+		public Panel ContentBox { get; set; }
 	}
 }

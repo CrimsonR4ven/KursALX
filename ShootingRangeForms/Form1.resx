@@ -136,8 +136,17 @@
   <data name="Astra903" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Astra903.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BenelliM1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\BenelliM1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BenelliM3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\BenelliM3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BerettaM9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\BerettaM9.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BrowningAuto5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\BrowningAuto5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ColtCobra" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\ColtCobra.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,6 +166,9 @@
   <data name="Glock23" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Glock23.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MTs255" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\MTs255.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Revolver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Revolver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,5 +180,20 @@
   </data>
   <data name="Type26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Images\Type26.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarsawMedium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\WarsawMedium.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarsawMedium2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\WarsawMedium2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarsawShort" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\WarsawShort.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarsawShort2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\WarsawShort2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Winchester1897" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Images\Winchester1897.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

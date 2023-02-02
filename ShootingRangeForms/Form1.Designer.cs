@@ -3,6 +3,7 @@ using ShootingRangeForms.Enums;
 using ShootingRangeData.ShootingRangeDB;
 using Microsoft.Extensions.Configuration;
 using ShootingRangeForms.Interfaces;
+using ShootingRangeForms.Controls;
 
 namespace ShootingRangeForms
 {
@@ -69,7 +70,7 @@ namespace ShootingRangeForms
 			this.panel2.Controls.Add(this.BackCheckout);
 			this.panel2.Location = new System.Drawing.Point(0, -3);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(293, 689);
+			this.panel2.Size = new System.Drawing.Size(310, 662);
 			this.panel2.TabIndex = 0;
 			// 
 			// radioButton10
@@ -230,6 +231,7 @@ namespace ShootingRangeForms
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.Maroon;
 			this.ClientSize = new System.Drawing.Size(1046, 659);
 			this.Controls.Add(this.panel2);
@@ -258,7 +260,6 @@ namespace ShootingRangeForms
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private Label label2;
-        private Panel panel2;
         private Button BuyCheckout;
         private Button BackCheckout;
         private RadioButton radioButton7;
@@ -274,5 +275,7 @@ namespace ShootingRangeForms
 		private RadioButton radioButton10;
 		private DBAccessClass dBAccess = new DBAccessClass();
 		#endregion
+
+		private Panel panel2;
 	}
 }

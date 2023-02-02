@@ -1,4 +1,6 @@
-﻿using ShootingRangeForms.Objects;
+﻿using ShootingRangeForms.Enums;
+using ShootingRangeForms.Interfaces;
+using ShootingRangeForms.Objects;
 namespace ShootingRangeForms
 {
 	partial class Form1
@@ -108,7 +110,6 @@ namespace ShootingRangeForms
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new Size(324, 687);
 			this.panel1.TabIndex = 7;
-			this.panel1.Paint += new PaintEventHandler(this.panel1_Paint);
 			// 
 			// pictureBox2
 			// 
@@ -148,7 +149,6 @@ namespace ShootingRangeForms
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.pictureBox1);
-			this.Load += new EventHandler(this.Form1_Load);
 			((System.ComponentModel.ISupportInitialize)this.pictureBox1).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
@@ -176,16 +176,48 @@ namespace ShootingRangeForms
 				height += gunPresent.ContentBox.Height + 20;
 			}
 		}
-		private void InitalizeGunCartBoxes()
+		public void InitalizeGunCartBoxes()
 		{
 			ObjectListCreate();
 			height = 20;
-			foreach (GunCartPresentBox gunCartPresent in GunsPresent)
+			foreach (IPresentBox gunCartPresent in GunsPresent)
 			{
 				gunCartPresent.ContentBox.Location = new Point(panel2.Width + 20, height);
 				gunCartPresent.ContentBox.Size = new Size(ClientSize.Width - panel2.Width - 40, 100);
 				Controls.Add(gunCartPresent.ContentBox);
 				height += gunCartPresent.ContentBox.Height + 20;
+			}
+		}
+		private void InitalizeLaneBoxes(List<LaneHolder> laneList)
+		{
+			ObjectListCreate(laneList);
+			height = 20;
+			foreach (LanePresentBox gunPresent in GunsPresent)
+			{
+				gunPresent.ContentBox.Location = new Point(panel2.Width + 20, height);
+				gunPresent.ContentBox.Size = new Size(ClientSize.Width - panel2.Width - 40, 100);
+				Controls.Add(gunPresent.ContentBox);
+				height += gunPresent.ContentBox.Height + 20;
+			}
+		}
+		public void InitializeLaneChoices()
+		{
+			ListDispose();
+			ObjectListCreate(gunCart.Lanes);
+			height = 20;
+			if(GunsPresent.Count == 0)
+			{
+				InitalizeGunCartBoxes();
+			}
+			else
+			{
+				foreach (LaneChoicePresentBox gunPresent in GunsPresent)
+				{
+					gunPresent.ContentBox.Location = new Point(panel2.Width + 20, height);
+					gunPresent.ContentBox.Size = new Size(ClientSize.Width - panel2.Width - 40, 200);
+					Controls.Add(gunPresent.ContentBox);
+					height += gunPresent.ContentBox.Height + 20;
+				}
 			}
 		}
 	}

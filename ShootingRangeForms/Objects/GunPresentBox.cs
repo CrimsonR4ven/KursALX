@@ -11,19 +11,20 @@ namespace ShootingRangeForms.Objects
         public Label Price;
         public Label TypeOfLane;
         public Label Description;
+        public Label AmountLabel;
         public TextBox AmountShots;
         public PictureBox Picture;
         public Button BuyButton;
-        public Panel ContentBox;
+        public Panel ContentBox { get; set; }
         public Cart MyCart;
 
-        public GunPresentBox(GunHolder gunUsed, Cart myCart)
+        public GunPresentBox(GunHolder gunUsed, Cart myCart, Form1 form)
         {
             MyCart = myCart;
             var resources = new ResourceManager(typeof(Form1));
             var image = (Bitmap)resources.GetObject(gunUsed.ImgName);
-
             ContentBox = new Panel();
+            ContentBox.Visible = false;
             ContentBox.BackColor = Color.White;
             GunUsed = gunUsed;
 
@@ -37,6 +38,7 @@ namespace ShootingRangeForms.Objects
             Name = new Label();
             Name.Text = GunUsed.Name;
             Name.Location = new Point(ContentBox.Location.X + Picture.Width + 5, ContentBox.Location.Y + 5);
+            Name.Size = new Size(150, 20);
 
             Description = new Label();
             Description.Text = GunUsed.Description;
@@ -48,6 +50,13 @@ namespace ShootingRangeForms.Objects
             Price.Text = $"Price per shot: {PriceString}";
             Price.Location = new Point(ContentBox.Location.X + 550, ContentBox.Location.Y + 70);
 
+            AmountShots = new TextBox();
+            AmountShots.Location = new Point(ContentBox.Location.X + 550, ContentBox.Location.Y + 43);
+            AmountShots.KeyPress += new KeyPressEventHandler(this.AmountShots_KeyPress);
+            AmountLabel = new Label();
+            AmountLabel.Text = "Number of shots";
+            AmountLabel.Location = new Point(ContentBox.Location.X + 550, ContentBox.Location.Y + 24);
+            AmountLabel.Size = new Size(150, 20);
 
             BuyButton = new Button();
             BuyButton.Text = "Rent This Gun!";
@@ -57,12 +66,16 @@ namespace ShootingRangeForms.Objects
             ContentBox.Controls.Add(Picture);
             ContentBox.Controls.Add(Name);
             ContentBox.Controls.Add(Description);
+            ContentBox.Controls.Add(AmountShots);
+            ContentBox.Controls.Add(AmountLabel);
             ContentBox.Controls.Add(Price);
             ContentBox.Controls.Add(BuyButton);
+            ContentBox.Visible = true;
         }
 
 		public void Dispose()
 		{
+            ContentBox.Visible = false;
             Name.Dispose();
             Price.Dispose();
             //TypeOfLane.Dispose();
@@ -72,14 +85,33 @@ namespace ShootingRangeForms.Objects
             BuyButton.Dispose();
             ContentBox.Dispose();
         }
-
 		public void AddToCart(object sender, EventArgs e)
 		{
-            if (!MyCart.GunsWillBuy.Contains(GunUsed))
+            if (!MyCart.GunsWillRent.Contains(GunUsed))
             {
-                MyCart.GunsWillBuy.Add(GunUsed);
+                MyCart.GunsWillRent.Add(GunUsed);
             }
-            GunUsed.Amount += int.Parse("5");
+            GunUsed.Amount += int.Parse(AmountShots.Text);
+            if (MyCart.Lanes[GunUsed.Lane] == false && !MyCart.ContainsLane(GunUsed.Lane))
+			{
+                MyCart.Lanes[GunUsed.Lane] = true;
+            }
         }
-	}
+        private void AmountShots_KeyPress(object sender, KeyPressEventArgs KeyPressEvent)
+        {
+            if (char.IsDigit(KeyPressEvent.KeyChar) || KeyPressEvent.KeyChar == '\b')
+            {
+                if (KeyPressEvent.KeyChar == '0' && this.AmountShots.Text == "")
+                {
+                    KeyPressEvent.Handled = true;
+                }
+                else
+                {
+                    KeyPressEvent.Handled = false;
+                }
+            }
+            else
+                KeyPressEvent.Handled = true;
+        }
+    }
 }

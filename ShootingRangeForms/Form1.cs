@@ -25,19 +25,9 @@ namespace ShootingRangeForms
             InitalizeGunBoxes(GunHolder.FromGunList(dBAccess.GetGunListFromCategory("HandGuns", connString)));
             //InitializeCheckoutMenu();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void BackCheckout_Click(object sender, EventArgs e)
         {
+            ListDispose();
             DisposeCheckoutMenu();
             InitializeStartMenu();
         }
@@ -52,6 +42,7 @@ namespace ShootingRangeForms
         private void radioButton7_CheckedChanged(object sender, EventArgs e)
         {
             ListDispose();
+            InitalizeLaneBoxes(LaneHolder.FromLaneList(dBAccess.GetLaneList(connString)));
         }
         private void radioButton8_CheckedChanged(object sender, EventArgs e)
         {
@@ -64,10 +55,10 @@ namespace ShootingRangeForms
         private void radioButton10_CheckedChanged(object sender, EventArgs e)
         {
             ListDispose();
-            InitalizeGunCartBoxes();       
+            InitializeLaneChoices();       
         }
         #endregion
-        private void ListDispose()
+        public void ListDispose()
         {
             DisposeGunBoxes(GunsPresent);
             //todo lookin bad, fix that
