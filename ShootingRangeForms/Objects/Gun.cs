@@ -9,9 +9,20 @@ namespace ShootingRangeForms.Objects
         public string Name;
         public string ImgName;
         public string Description;
-        public LaneEnum Lane;
+
+        public LaneEnum     Lane;
         public CategoryEnum Category;
 
+        public GunHolder(Gun gun)
+        {
+            Amount = 0;
+            Name = gun.Name;
+            Price = gun.Price;
+            ImgName = gun.ImgName;
+            Description = gun.Description;
+            Lane = OperationsOnEnum.GetLaneEnum(gun.Lane);
+            Category = OperationsOnEnum.GetCategory(gun.Category);
+        }
         public GunHolder(string name, string description, string imgName, double price)
         {
             Name        = name;
@@ -20,16 +31,6 @@ namespace ShootingRangeForms.Objects
             Price       = price;
             Amount      = 0; 
         }
-        public GunHolder(Gun gun)
-		{
-            Amount      = 0;
-            Name        = gun.Name;
-            Price       = gun.Price;
-            ImgName     = gun.ImgName;
-            Description = gun.Description;
-            Lane        = OperationsOnEnum.GetLaneEnum(gun.Lane);
-            Category    = OperationsOnEnum.GetCategory(gun.Category);
-		}
 
         public static List<GunHolder> FromGunList(List<Gun> gunList)
 		{

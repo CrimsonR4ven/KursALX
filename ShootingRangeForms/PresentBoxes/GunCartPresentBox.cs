@@ -1,26 +1,47 @@
 ﻿using ShootingRangeForms.Interfaces;
+using ShootingRangeForms.Objects;
 using System.Resources;
 
-namespace ShootingRangeForms.Objects
+namespace ShootingRangeForms.PresentBoxes
 {
 	public class GunCartPresentBox : IPresentBox
 	{
-        private string PriceString;
-        public GunHolder GunUsed;
-		public LaneHolder LaneUsed;
-        public Label Name;
-        public Label Price;
-        public Label TypeOfLane;
-        public Label Description;
-        public TextBox AmountShots;
-        public PictureBox Picture;
-        public Button BuyButton;
-        public Panel ContentBox { get; set; }
-        public Cart MyCart;
-		public Form1 Forma;
+		private bool   IsGun;
+		private string PriceString;
 
-        public GunCartPresentBox(GunHolder gunUsed, Cart myCart, Form1 form)
+		public Panel ContentBox { get; set; }
+
+		public Cart       MyCart;
+		public Form1      Forma;
+		public Label	  Name;
+		public Label	  Price;
+		public Label      TypeOfLane;
+		public Label      Description;
+		public Button     BuyButton;
+		public TextBox    AmountShots;
+		public GunHolder  GunUsed;
+		public PictureBox Picture;
+		public LaneHolder LaneUsed;
+
+		public GunCartPresentBox()
 		{
+			Price = new Label();
+			Description = new Label();
+			Picture = new PictureBox();
+			BuyButton = new Button();
+			ContentBox = new Panel();
+			ContentBox.BackColor = Color.White;
+
+			Name = new Label();
+			Name.Text = "Your cart is empty!";
+			Name.Size = new Size(200, 30);
+			Name.Location = new Point(ContentBox.Location.X + ContentBox.Width * 6 / 4, ContentBox.Location.Y + 35);
+
+			ContentBox.Controls.Add(Name);
+		}
+		public GunCartPresentBox(GunHolder gunUsed, Cart myCart, Form1 form)
+		{
+			IsGun = true;
 			MyCart = myCart;
 			Forma = form;
 			var resources = new ResourceManager(typeof(Form1));
@@ -34,8 +55,8 @@ namespace ShootingRangeForms.Objects
 			Picture.Location = new Point(ContentBox.Location.X + 5, ContentBox.Location.Y + 5);
 			Picture.Size = new Size(ContentBox.Size.Height - 10, ContentBox.Size.Height - 10);
 			Picture.Image = image;
-			Picture.BackColor = System.Drawing.Color.Transparent;
-			Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			Picture.BackColor = Color.Transparent;
+			Picture.SizeMode = PictureBoxSizeMode.Zoom;
 
 			Name = new Label();
 			Name.Text = GunUsed.Name;
@@ -64,6 +85,7 @@ namespace ShootingRangeForms.Objects
 		}
 		public GunCartPresentBox(LaneHolder laneUsed, Cart myCart, Form1 form)
 		{
+			IsGun = false;
 			MyCart = myCart;
 			Forma = form;
 			var resources = new ResourceManager(typeof(Form1));
@@ -77,8 +99,8 @@ namespace ShootingRangeForms.Objects
 			Picture.Location = new Point(ContentBox.Location.X + 5, ContentBox.Location.Y + 5);
 			Picture.Size = new Size(ContentBox.Size.Height - 10, ContentBox.Size.Height - 10);
 			Picture.Image = image;
-			Picture.BackColor = System.Drawing.Color.Transparent;
-			Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			Picture.BackColor = Color.Transparent;
+			Picture.SizeMode = PictureBoxSizeMode.Zoom;
 
 			Name = new Label();
 			Name.Text = LaneUsed.Name;
@@ -105,43 +127,8 @@ namespace ShootingRangeForms.Objects
 			ContentBox.Controls.Add(Price);
 			ContentBox.Controls.Add(BuyButton);
 		}
-		public GunCartPresentBox()
-		{
-			Price = new Label();
-			Description = new Label();
-			Picture = new PictureBox();
-			BuyButton = new Button();
-			ContentBox = new Panel();
-			ContentBox.BackColor = Color.White;
 
-			Name = new Label();
-			Name.Text = "Your cart is empty!";
-			Name.Size = new Size(200, 30);
-			Name.Location = new Point(ContentBox.Location.X + ContentBox.Width * 6 / 4 , ContentBox.Location.Y + 35 );
-			
-			ContentBox.Controls.Add(Name);
-		}
-		public void AddToCart(object sender, EventArgs e)
-		{
-			throw new NotImplementedException();
-		}
-        public void RemoveFromCart(object sender, EventArgs e)
-        {
-			try
-			{
-				MyCart.GunsWillRent.Remove(GunUsed);
-				GunUsed.Amount = 0;
-			}
-			catch
-			{
-				MyCart.LanesWillRent.Remove(LaneUsed);
-				LaneUsed.RentHours = 0;
-			}
-			this.Dispose();
-			Forma.ListDispose();
-			Forma.InitalizeGunCartBoxes();
-        }
-        public void Dispose()
+		public void Dispose()
 		{
 			try
 			{
@@ -161,6 +148,26 @@ namespace ShootingRangeForms.Objects
 				Name.Dispose();
 				ContentBox.Dispose();
 			}
+		}
+		public void AddToCart(object sender, EventArgs e)
+		{
+			throw new NotImplementedException();
+		}
+		public void RemoveFromCart(object sender, EventArgs e)
+		{
+			if (IsGun)
+			{
+				MyCart.GunsWillRent.Remove(GunUsed);
+				GunUsed.Amount = 0;
+			}
+			else
+			{
+				MyCart.LanesWillRent.Remove(LaneUsed);
+				LaneUsed.RentHours = 0;
+			}
+			Dispose();
+			Forma.ListDispose();
+			Forma.InitalizeGunCartBoxes();
 		}
 	}
 }

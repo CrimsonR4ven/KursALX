@@ -6,11 +6,11 @@ namespace ShootingRangeForms.Objects
 	public class LaneHolder
 	{
 		public int    Distance;
-		public string ImgName;
-		public string Name;
+		public int	  RentHours;
 		public double RentPrice;
+		public string Name;
+		public string ImgName;
 		public string Description;
-		public int RentHours;
 
 		public LaneEnum LaneType;
 
@@ -23,6 +23,7 @@ namespace ShootingRangeForms.Objects
 			Description = lane.Description;
 			LaneType    = OperationsOnEnum.GetLaneEnum(lane.Lane);
 		}
+
 		public static List<LaneHolder> FromLaneList(List<GunLane> laneList)
 		{
 			List<LaneHolder> list = new List<LaneHolder>();

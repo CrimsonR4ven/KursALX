@@ -1,6 +1,8 @@
 ﻿using ShootingRangeForms.Enums;
 using ShootingRangeForms.Interfaces;
 using ShootingRangeForms.Objects;
+using ShootingRangeForms.PresentBoxes;
+
 namespace ShootingRangeForms
 {
 	partial class Form1
@@ -14,7 +16,6 @@ namespace ShootingRangeForms
 			this.Name = "Shooting Range";
 			this.Text = "Shooting Range";
 		}
-
 		private void InitializeStartMenu()
 		{
 			this.ConfigureButton = new Button();
@@ -164,16 +165,25 @@ namespace ShootingRangeForms
 		{
 			//TODO checkout menu
 		}
-		private void InitalizeGunBoxes(List<GunHolder> gunList)
+
+		public void InitializeLaneChoices()
 		{
-			ObjectListCreate(gunList);
+			ListDispose();
+			ObjectListCreate(gunCart.Lanes);
 			height = 20;
-			foreach (GunPresentBox gunPresent in GunsPresent)
+			if (GunsPresent.Count == 0)
 			{
-				gunPresent.ContentBox.Location = new Point(panel2.Width + 20, height);
-				gunPresent.ContentBox.Size = new Size(ClientSize.Width - panel2.Width - 40, 100);
-				Controls.Add(gunPresent.ContentBox);
-				height += gunPresent.ContentBox.Height + 20;
+				InitalizeGunCartBoxes();
+			}
+			else
+			{
+				foreach (LaneChoicePresentBox gunPresent in GunsPresent)
+				{
+					gunPresent.ContentBox.Location = new Point(20, height);
+					gunPresent.ContentBox.Size = new Size(ClientSize.Width - panel2.Width - 40, 200);
+					panel3.Controls.Add(gunPresent.ContentBox);
+					height += gunPresent.ContentBox.Height + 20;
+				}
 			}
 		}
 		public void InitalizeGunCartBoxes()
@@ -182,42 +192,48 @@ namespace ShootingRangeForms
 			height = 20;
 			foreach (IPresentBox gunCartPresent in GunsPresent)
 			{
-				gunCartPresent.ContentBox.Location = new Point(panel2.Width + 20, height);
+				gunCartPresent.ContentBox.Location = new Point(20, height);
 				gunCartPresent.ContentBox.Size = new Size(ClientSize.Width - panel2.Width - 40, 100);
-				Controls.Add(gunCartPresent.ContentBox);
+				panel3.Controls.Add(gunCartPresent.ContentBox);
 				height += gunCartPresent.ContentBox.Height + 20;
 			}
+			//TO DO tu przełożyć checkout button
 		}
-		private void InitalizeLaneBoxes(List<LaneHolder> laneList)
+
+		private void InitalizeGunBoxes(List<GunHolder> gunList)
+		{
+			ObjectListCreate(gunList);
+			height = 20;
+			foreach (GunPresentBox gunPresent in GunsPresent)
+			{
+				gunPresent.ContentBox.Location = new Point(20, height);
+				gunPresent.ContentBox.Size = new Size(ClientSize.Width - panel2.Width - 40, 100);
+				panel3.Controls.Add(gunPresent.ContentBox);
+				height += gunPresent.ContentBox.Height + 20;
+			}
+		}
+		private void InitializeLaneBoxes(List<LaneHolder> laneList)
 		{
 			ObjectListCreate(laneList);
 			height = 20;
 			foreach (LanePresentBox gunPresent in GunsPresent)
 			{
-				gunPresent.ContentBox.Location = new Point(panel2.Width + 20, height);
+				gunPresent.ContentBox.Location = new Point(20, height);
 				gunPresent.ContentBox.Size = new Size(ClientSize.Width - panel2.Width - 40, 100);
-				Controls.Add(gunPresent.ContentBox);
+				panel3.Controls.Add(gunPresent.ContentBox);
 				height += gunPresent.ContentBox.Height + 20;
 			}
 		}
-		public void InitializeLaneChoices()
+		private void InitializeBundleBoxes(List<BundleHolder> bundleList)
 		{
-			ListDispose();
-			ObjectListCreate(gunCart.Lanes);
+			ObjectListCreate(bundleList);
 			height = 20;
-			if(GunsPresent.Count == 0)
+			foreach (BundlePresentBox bundlePresent in GunsPresent)
 			{
-				InitalizeGunCartBoxes();
-			}
-			else
-			{
-				foreach (LaneChoicePresentBox gunPresent in GunsPresent)
-				{
-					gunPresent.ContentBox.Location = new Point(panel2.Width + 20, height);
-					gunPresent.ContentBox.Size = new Size(ClientSize.Width - panel2.Width - 40, 200);
-					Controls.Add(gunPresent.ContentBox);
-					height += gunPresent.ContentBox.Height + 20;
-				}
+				bundlePresent.ContentBox.Location = new Point(20, height);
+				bundlePresent.ContentBox.Size = new Size(ClientSize.Width - panel2.Width - 40, 100);
+				panel3.Controls.Add(bundlePresent.ContentBox);
+				height += bundlePresent.ContentBox.Height + 20;
 			}
 		}
 	}

@@ -4,6 +4,22 @@ namespace ShootingRangeForms.Enums
 {
 	public static class OperationsOnEnum
 	{
+        public static LaneEnum GetLaneEnum(GunLaneType lane)
+        {
+            switch (lane.Name)
+            {
+                case ("Short"):
+                    return LaneEnum.SHORT;
+                case ("Middle"):
+                    return LaneEnum.MIDDLE;
+                case ("Long"):
+                    return LaneEnum.LONG;
+                case ("Extra Long"):
+                    return LaneEnum.XLONG;
+                default:
+                    return LaneEnum.UNDEFINED;
+            }
+        }
         public static CategoryEnum GetCategory(GunCategory category)
         {
             switch (category.Name)
@@ -24,6 +40,24 @@ namespace ShootingRangeForms.Enums
                     return CategoryEnum.UNDEFINED;
             }
         }
+
+        public static string GetLaneType(LaneEnum type)
+        {
+            switch (type)
+            {
+                case (LaneEnum.SHORT):
+                    return "Short";
+                case (LaneEnum.MIDDLE):
+                    return "Middle";
+                case (LaneEnum.LONG):
+                    return "Long";
+                case (LaneEnum.XLONG):
+                    return "Extra Long";
+                default:
+                    throw new Exception("Undefined type");
+            }
+        }
+        
         public static string GetCategory(CategoryEnum category)
         {
             switch (category)
@@ -42,38 +76,6 @@ namespace ShootingRangeForms.Enums
                     return "Sniper Rifles";
                 default:
                     throw new Exception("Undefined category");
-            }
-        }
-        public static LaneEnum GetLaneEnum(GunLaneType lane)
-        {
-            switch (lane.Name)
-            {
-                case ("Short"):
-                    return LaneEnum.SHORT;
-                case ("Middle"):
-                    return LaneEnum.MIDDLE;
-                case ("Long"):
-                    return LaneEnum.LONG;
-                case ("Extra Long"):
-                    return LaneEnum.XLONG;
-                default:
-                    return LaneEnum.UNDEFINED;
-            }
-        }
-        public static string GetLaneType(LaneEnum type)
-        {
-            switch (type)
-            {
-                case (LaneEnum.SHORT):
-                    return "Short";
-                case (LaneEnum.MIDDLE):
-                    return "Middle";
-                case (LaneEnum.LONG):
-                    return "Long";
-                case (LaneEnum.XLONG):
-                    return "Extra Long";
-                default:
-                    throw new Exception("Undefined type");
             }
         }
     }

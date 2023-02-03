@@ -1,10 +1,27 @@
 ﻿using ShootingRangeForms.Enums;
 using ShootingRangeForms.Objects;
+using ShootingRangeForms.PresentBoxes;
 
 namespace ShootingRangeForms
 {
 	partial class Form1
 	{
+        private void ObjectListCreate()
+        {
+            GunsPresent.Clear();
+            foreach (GunHolder gun in gunCart.GunsWillRent)
+            {
+                GunsPresent.Add(new GunCartPresentBox(gun, gunCart, this));
+            }
+            foreach (LaneHolder lane in gunCart.LanesWillRent)
+            {
+                GunsPresent.Add(new GunCartPresentBox(lane, gunCart, this));
+            }
+            if (GunsPresent.Count == 0)
+            {
+                GunsPresent.Add(new GunCartPresentBox());
+            }
+        }
         private void ObjectListCreate(List<GunHolder> gunsList)
         {
             GunsPresent.Clear();
@@ -21,20 +38,12 @@ namespace ShootingRangeForms
                 GunsPresent.Add(new LanePresentBox(lane, gunCart, this));
             }
         }
-        private void ObjectListCreate()
+        private void ObjectListCreate(List<BundleHolder> bundleList)
         {
             GunsPresent.Clear();
-            foreach (GunHolder gun in gunCart.GunsWillRent)
+            foreach (BundleHolder bundle in bundleList)
             {
-                GunsPresent.Add(new GunCartPresentBox(gun, gunCart, this));
-            }
-            foreach (LaneHolder lane in gunCart.LanesWillRent)
-            {
-                GunsPresent.Add(new GunCartPresentBox(lane, gunCart, this));
-            }
-            if (GunsPresent.Count == 0)
-			{
-                GunsPresent.Add(new GunCartPresentBox());
+                GunsPresent.Add(new BundlePresentBox(bundle, gunCart, this));
             }
         }
         private void ObjectListCreate(Dictionary<LaneEnum, bool> dict)

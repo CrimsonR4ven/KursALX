@@ -4,9 +4,10 @@ namespace ShootingRangeForms.Objects
 {
     public class Cart
     {
-        public Dictionary<LaneEnum, bool> Lanes;
         public List<GunHolder> GunsWillRent;
         public List<LaneHolder> LanesWillRent;
+        public Dictionary<LaneEnum, bool> Lanes;
+
         public Cart()
         {
             Lanes = new Dictionary<LaneEnum, bool>();
@@ -19,6 +20,7 @@ namespace ShootingRangeForms.Objects
             GunsWillRent = new List<GunHolder>();
             LanesWillRent = new List<LaneHolder>();
         }
+
         public bool ContainsLane(LaneEnum searched)
 		{
             foreach (LaneHolder lane in LanesWillRent)

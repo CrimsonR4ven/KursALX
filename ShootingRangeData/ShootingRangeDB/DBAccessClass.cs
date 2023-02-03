@@ -7,6 +7,7 @@
 		{ 
 			db = new ShootingRangeContext();
 		}
+
 		public bool TestConnection()
 		{
 			try
@@ -19,16 +20,14 @@
 			}
 			return true;
 		}
+
 		public List<Gun> GetGunListFromCategory(string category, string connString)
 		{
 			return db.Guns.Where(g => g.Category.Name == category).OrderBy(g => g.Name).ToList();
 		}
 		public List<Bundle> GetBundleList(string connString)
 		{
-			using (ShootingRangeContext db = new ShootingRangeContext(connString))
-			{
-				return db.Bundles.ToList();
-			}
+			return db.Bundles.ToList();
 		}
 		public List<GunLane> GetLaneList(string connString)
 		{

@@ -49,6 +49,7 @@ namespace ShootingRangeForms
 			this.label3 = new System.Windows.Forms.Label();
 			this.BuyCheckout = new System.Windows.Forms.Button();
 			this.BackCheckout = new System.Windows.Forms.Button();
+			this.panel3 = new System.Windows.Forms.Panel();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -227,13 +228,21 @@ namespace ShootingRangeForms
 			this.BackCheckout.UseVisualStyleBackColor = true;
 			this.BackCheckout.Click += new System.EventHandler(this.BackCheckout_Click);
 			// 
+			// panel3
+			// 
+			this.panel3.AutoScroll = true;
+			this.panel3.Location = new System.Drawing.Point(310, 0);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(736, 659);
+			this.panel3.TabIndex = 1;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.Maroon;
 			this.ClientSize = new System.Drawing.Size(1046, 659);
+			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.panel2);
 			this.Name = "Form1";
 			this.Text = "Shooting Range";
@@ -277,5 +286,6 @@ namespace ShootingRangeForms
 		#endregion
 
 		private Panel panel2;
+		private Panel panel3;
 	}
 }

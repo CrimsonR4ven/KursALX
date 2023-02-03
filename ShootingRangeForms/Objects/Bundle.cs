@@ -6,6 +6,7 @@ namespace ShootingRangeForms.Objects
 	{	
 		public string Name;
 		public double Price;
+		public string ImgName;
 		public string Description;
 
 		public List<GunHolder> gunsInBundle;
@@ -17,6 +18,7 @@ namespace ShootingRangeForms.Objects
 			Description  = bundle.Description;
 			gunsInBundle = GunHolder.FromGunList(bundle.Guns);
 		}
+
 		public static List<BundleHolder> FromLaneList(List<Bundle> bundleList)
 		{
 			List<BundleHolder> list = new List<BundleHolder>();

@@ -17,7 +17,12 @@ namespace ShootingRangeForms
         {
             DisposeStartMenu();
         }
-
+        private void BackCheckout_Click(object sender, EventArgs e)
+        {
+            ListDispose();
+            DisposeCheckoutMenu();
+            InitializeStartMenu();
+        }
         private void ShopServiceButton_Click(object sender, EventArgs e)
         {
             DisposeStartMenu();
@@ -25,28 +30,23 @@ namespace ShootingRangeForms
             InitalizeGunBoxes(GunHolder.FromGunList(dBAccess.GetGunListFromCategory("HandGuns", connString)));
             //InitializeCheckoutMenu();
         }
-        private void BackCheckout_Click(object sender, EventArgs e)
-        {
-            ListDispose();
-            DisposeCheckoutMenu();
-            InitializeStartMenu();
-        }
-        #region Radio buttons on checkout
+
+        #region Radio buttons on check
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
             ListDispose();
             var radioBtn = (RadioButton)sender;
             InitalizeGunBoxes(GunHolder.FromGunList(dBAccess.GetGunListFromCategory(radioBtn.Text, connString)));
         }
-
         private void radioButton7_CheckedChanged(object sender, EventArgs e)
         {
             ListDispose();
-            InitalizeLaneBoxes(LaneHolder.FromLaneList(dBAccess.GetLaneList(connString)));
+            InitializeLaneBoxes(LaneHolder.FromLaneList(dBAccess.GetLaneList(connString)));
         }
         private void radioButton8_CheckedChanged(object sender, EventArgs e)
         {
             ListDispose();
+            InitializeBundleBoxes(BundleHolder.FromLaneList(dBAccess.GetBundleList("ye")));
         }
         private void radioButton9_CheckedChanged(object sender, EventArgs e)
         {
@@ -58,6 +58,7 @@ namespace ShootingRangeForms
             InitializeLaneChoices();       
         }
         #endregion
+
         public void ListDispose()
         {
             DisposeGunBoxes(GunsPresent);

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShootingRangeData.ShootingRangeDB;
 
@@ -11,9 +12,11 @@ using ShootingRangeData.ShootingRangeDB;
 namespace ShootingRangeData.Migrations
 {
     [DbContext(typeof(ShootingRangeContext))]
-    partial class ShootingRangeContextModelSnapshot : ModelSnapshot
+    [Migration("20230203124242_new")]
+    partial class @new
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
